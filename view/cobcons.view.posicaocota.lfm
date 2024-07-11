@@ -1,0 +1,270 @@
+object FrmPosicaoCota: TFrmPosicaoCota
+  Left = 544
+  Height = 297
+  Top = 176
+  Width = 560
+  BorderStyle = bsNone
+  BorderWidth = 5
+  Caption = 'Posicao cota'
+  ClientHeight = 297
+  ClientWidth = 560
+  Font.Color = clWhite
+  Font.Height = -16
+  Font.Name = 'Segoe UI Light'
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  Position = poMainFormCenter
+  LCLVersion = '2.2.2.0'
+  object pnTitulo: TPanel
+    Left = 10
+    Height = 54
+    Top = 10
+    Width = 540
+    Align = alTop
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    Caption = 'Posição de Consorciados'
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -24
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+    OnMouseMove = pnTituloMouseMove
+  end
+  object pnBack: TPanel
+    Left = 151
+    Height = 218
+    Top = 69
+    Width = 399
+    Align = alClient
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 218
+    ClientWidth = 399
+    Color = clGray
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 1
+    object Label51: TLabel
+      Left = 16
+      Height = 21
+      Top = 10
+      Width = 43
+      Caption = 'Grupo'
+      ParentColor = False
+    end
+    object edGrupo: TEdit
+      Left = 65
+      Height = 29
+      Top = 8
+      Width = 48
+      ParentColor = True
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 7
+    end
+    object edSeq: TEdit
+      Left = 154
+      Height = 29
+      Top = 8
+      Width = 32
+      ParentColor = True
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 8
+    end
+    object Label53: TLabel
+      Left = 117
+      Height = 21
+      Top = 10
+      Width = 32
+      Caption = 'Cota'
+      ParentColor = False
+    end
+    object edCota: TEdit
+      Left = 187
+      Height = 29
+      Top = 8
+      Width = 48
+      ParentColor = True
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 9
+    end
+    object Label54: TLabel
+      Left = 18
+      Height = 21
+      Top = 39
+      Width = 41
+      Caption = 'Nome'
+      ParentColor = False
+    end
+    object edNome: TEdit
+      Left = 64
+      Height = 29
+      Top = 39
+      Width = 312
+      ParentColor = True
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 10
+    end
+    object cbPag: TCheckBox
+      Left = 64
+      Height = 25
+      Top = 162
+      Width = 142
+      Caption = 'Listar Pagamentos'
+      Checked = True
+      State = cbChecked
+      TabOrder = 3
+    end
+    object cbPen: TCheckBox
+      Left = 231
+      Height = 25
+      Top = 162
+      Width = 134
+      Caption = 'Listar Pendencias'
+      Checked = True
+      State = cbChecked
+      TabOrder = 4
+    end
+    object cbCre: TCheckBox
+      Left = 64
+      Height = 25
+      Top = 182
+      Width = 113
+      Caption = 'Listar Créditos'
+      Checked = True
+      State = cbChecked
+      TabOrder = 5
+    end
+    object cbAli: TCheckBox
+      Left = 231
+      Height = 25
+      Top = 182
+      Width = 129
+      Caption = 'Listar Alienações'
+      Checked = True
+      State = cbChecked
+      TabOrder = 6
+    end
+    object cbTodos: TCheckBox
+      Left = 65
+      Height = 25
+      Top = 107
+      Width = 178
+      Caption = 'Marca/Desmarca Todos'
+      Checked = True
+      OnChange = cbTodosChange
+      State = cbChecked
+      TabOrder = 0
+    end
+    object cbRes: TCheckBox
+      Left = 231
+      Height = 25
+      Top = 140
+      Width = 146
+      Caption = 'Resumo Financeiro'
+      Checked = True
+      State = cbChecked
+      TabOrder = 2
+    end
+    object cbCon: TCheckBox
+      Left = 65
+      Height = 25
+      Top = 140
+      Width = 149
+      Caption = 'Dados do Contrato'
+      Checked = True
+      State = cbChecked
+      TabOrder = 1
+    end
+    object Label55: TLabel
+      Left = 30
+      Height = 21
+      Top = 75
+      Width = 29
+      Caption = 'Tipo'
+      ParentColor = False
+    end
+    object cboTipo: TComboBox
+      Left = 64
+      Height = 29
+      Top = 72
+      Width = 312
+      ItemHeight = 21
+      ItemIndex = 0
+      Items.Strings = (
+        'Posição de Cotas'
+        'Conta Corrente Devoluções'
+      )
+      OnSelect = cboTipoSelect
+      Style = csDropDownList
+      TabOrder = 11
+      Text = 'Posição de Cotas'
+    end
+  end
+  object pnAcoes: TPanel
+    Left = 10
+    Height = 218
+    Top = 69
+    Width = 136
+    Align = alLeft
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 218
+    ClientWidth = 136
+    Color = clGray
+    ParentColor = False
+    TabOrder = 2
+    object SpeedButton1: TSpeedButton
+      Left = 2
+      Height = 39
+      Top = 2
+      Width = 132
+      Action = Imprimir
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Margin = 2
+    end
+    object SpeedButton2: TSpeedButton
+      Left = 2
+      Height = 39
+      Top = 43
+      Width = 132
+      Action = Cancelar
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Margin = 2
+    end
+  end
+  object AL: TActionList
+    Images = DM.IL18
+    Left = 32
+    Top = 200
+    object Imprimir: TAction
+      Caption = 'Imprimir'
+      Hint = 'Clique para imprimir'
+      ImageIndex = 28
+      OnExecute = ImprimirExecute
+      ShortCut = 113
+    end
+    object Cancelar: TAction
+      Caption = 'Cancelar (Esc)'
+      Hint = 'Clique para Cancelar'
+      ImageIndex = 12
+      OnExecute = CancelarExecute
+      ShortCut = 27
+    end
+  end
+end

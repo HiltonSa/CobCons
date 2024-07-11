@@ -1,0 +1,203 @@
+object FrmQG: TFrmQG
+  Left = 1732
+  Height = 340
+  Top = 250
+  Width = 588
+  BorderStyle = bsNone
+  BorderWidth = 5
+  Caption = 'FrmQG'
+  ClientHeight = 340
+  ClientWidth = 588
+  Font.Color = clWhite
+  Font.Height = -16
+  Font.Name = 'Segoe UI Light'
+  KeyPreview = True
+  OnCreate = FormCreate
+  Position = poMainFormCenter
+  ShowHint = True
+  LCLVersion = '2.2.0.4'
+  WindowState = wsMaximized
+  object pnTitulo: TPanel
+    Left = 10
+    Height = 82
+    Top = 10
+    Width = 568
+    Align = alTop
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    Caption = 'QG'
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -24
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+  end
+  object pnAcoes: TPanel
+    Left = 10
+    Height = 233
+    Top = 97
+    Width = 136
+    Align = alLeft
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 233
+    ClientWidth = 136
+    Color = clGray
+    ParentColor = False
+    TabOrder = 1
+    object SpeedButton1: TSpeedButton
+      Left = 2
+      Height = 39
+      Top = 43
+      Width = 132
+      Action = processar
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Images = DM.IL18
+      ImageIndex = 17
+      Margin = 2
+    end
+    object SpeedButton2: TSpeedButton
+      Left = 2
+      Height = 39
+      Top = 84
+      Width = 132
+      Action = Cancelar
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Images = DM.IL18
+      ImageIndex = 12
+      Margin = 2
+    end
+    object SpeedButton3: TSpeedButton
+      Left = 2
+      Height = 39
+      Top = 2
+      Width = 132
+      Action = gravar
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Images = DM.IL18
+      ImageIndex = 13
+      Margin = 2
+    end
+  end
+  object pnBack: TPanel
+    Left = 151
+    Height = 233
+    Top = 97
+    Width = 427
+    Align = alClient
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 233
+    ClientWidth = 427
+    Color = clGray
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 2
+    object PC: TPageControl
+      Left = 0
+      Height = 233
+      Top = 0
+      Width = 427
+      ActivePage = tsDados
+      Align = alClient
+      TabIndex = 1
+      TabOrder = 0
+      object tsObs: TTabSheet
+        Caption = 'Info'
+        ClientHeight = 199
+        ClientWidth = 419
+        object mm: TMemo
+          Left = 0
+          Height = 114
+          Top = 0
+          Width = 419
+          Align = alTop
+          Lines.Strings = (
+            'Procurar cada pagamento de Rnp em Abril / 2022 e atualizar o pagamento para o saldo anterior, assim o valor do pagamento será igual ao saldo.'
+            'Gerar xls separando os valores pagos em antes e depois de 05/02/2009 ou 2008, para lançamento na contabilidade.'
+          )
+          ScrollBars = ssAutoBoth
+          TabOrder = 0
+        end
+      end
+      object tsDados: TTabSheet
+        Caption = 'Dados'
+        ClientHeight = 199
+        ClientWidth = 419
+        object nv: TDBNavigator
+          Left = 0
+          Height = 25
+          Top = 174
+          Width = 419
+          Align = alBottom
+          BevelOuter = bvNone
+          ChildSizing.EnlargeHorizontal = crsScaleChilds
+          ChildSizing.EnlargeVertical = crsScaleChilds
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 100
+          ClientHeight = 25
+          ClientWidth = 419
+          DataSource = ds
+          Options = []
+          TabOrder = 0
+        end
+        object Grid: TDBGrid
+          Left = 0
+          Height = 174
+          Top = 0
+          Width = 419
+          Align = alClient
+          Color = clWindow
+          Columns = <>
+          DataSource = ds
+          FixedCols = 0
+          Options = [dgEditing, dgTitles, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+          TabOrder = 1
+        end
+      end
+    end
+  end
+  object AL: TActionList
+    Images = DM.IL18
+    Left = 96
+    Top = 32
+    object processar: TAction
+      Caption = 'Processar'
+      Hint = 'Clique para processar'
+      ImageIndex = 17
+      OnExecute = processarExecute
+      ShortCut = 113
+    end
+    object Cancelar: TAction
+      Caption = 'Sair'
+      Hint = 'Clique para Fechar'
+      ImageIndex = 12
+      OnExecute = CancelarExecute
+      ShortCut = 27
+    end
+    object gravar: TAction
+      Caption = 'Gravar'
+      Hint = 'Gravar'
+      ImageIndex = 13
+      OnExecute = gravarExecute
+    end
+  end
+  object ds: TDataSource
+    Left = 44
+    Top = 29
+  end
+end

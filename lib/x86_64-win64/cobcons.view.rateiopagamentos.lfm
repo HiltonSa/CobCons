@@ -1,0 +1,339 @@
+object FrmRateioPagamentos: TFrmRateioPagamentos
+  Left = 358
+  Height = 563
+  Top = 73
+  Width = 871
+  BorderStyle = bsNone
+  BorderWidth = 5
+  Caption = 'Rateio de Pagamentos'
+  ClientHeight = 563
+  ClientWidth = 871
+  Font.Color = clWhite
+  Font.Height = -16
+  Font.Name = 'Segoe UI Light'
+  KeyPreview = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  Position = poMainFormCenter
+  ShowHint = True
+  LCLVersion = '2.2.0.4'
+  object pnTitulo: TPanel
+    Left = 10
+    Height = 66
+    Top = 10
+    Width = 851
+    Align = alTop
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    Caption = 'Rateio de Pagamentos'
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -28
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+    OnMouseMove = pnTituloMouseMove
+  end
+  object pnAcoes: TPanel
+    Left = 10
+    Height = 472
+    Top = 81
+    Width = 136
+    Align = alLeft
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 472
+    ClientWidth = 136
+    Color = clGray
+    ParentColor = False
+    TabOrder = 1
+    object btnSair: TSpeedButton
+      Left = 2
+      Height = 47
+      Top = 149
+      Width = 132
+      Action = Sair
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Images = DM.IL18
+      ImageIndex = 5
+      Margin = 2
+    end
+    object btnPesq1: TSpeedButton
+      Left = 2
+      Height = 47
+      Top = 51
+      Width = 132
+      Action = calcular
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Images = DM.IL18
+      ImageIndex = 8
+      Margin = 2
+    end
+    object btnSair1: TSpeedButton
+      Left = 2
+      Height = 47
+      Top = 100
+      Width = 132
+      Action = gravar
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Images = DM.IL18
+      ImageIndex = 42
+      Margin = 2
+    end
+    object btnPesq2: TSpeedButton
+      Left = 2
+      Height = 47
+      Top = 2
+      Width = 132
+      Action = pesqisar
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Images = DM.IL18
+      ImageIndex = 43
+      Margin = 2
+    end
+  end
+  object pnBackGround: TPanel
+    Left = 151
+    Height = 472
+    Top = 81
+    Width = 710
+    Align = alClient
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 472
+    ClientWidth = 710
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    ParentFont = False
+    TabOrder = 2
+    object Panel2: TPanel
+      Left = 0
+      Height = 160
+      Top = 0
+      Width = 710
+      Align = alTop
+      BevelOuter = bvNone
+      ClientHeight = 160
+      ClientWidth = 710
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Segoe UI Light'
+      ParentFont = False
+      TabOrder = 0
+      object dtDataBase: TDateTimePicker
+        Left = 116
+        Height = 29
+        Hint = 'Data base para cálculo dos valores'
+        Top = 8
+        Width = 87
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        TabOrder = 0
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 44606
+        Time = 0.50297814814985
+        UseDefaultSeparators = True
+        HideDateTimeParts = [dtpDay]
+        MonthNames = 'short'
+        ShowMonthNames = True
+        OnExit = dtDataBaseExit
+      end
+      object Label2: TLabel
+        Left = 40
+        Height = 21
+        Top = 11
+        Width = 67
+        Caption = 'Data Base'
+      end
+      object cboAgente: THNSCombox
+        Left = 118
+        Height = 29
+        Top = 40
+        Width = 263
+        AutoComplete = True
+        AutoCompleteText = [cbactEnabled, cbactSearchAscending]
+        ItemHeight = 21
+        TabOrder = 1
+      end
+      object Label7: TLabel
+        Left = 64
+        Height = 21
+        Top = 43
+        Width = 49
+        Caption = 'Agente'
+      end
+      object Label9: TLabel
+        Left = 0
+        Height = 21
+        Top = 75
+        Width = 113
+        Caption = 'Tipo Documento'
+      end
+      object cboTipoDoc: THNSCombox
+        Left = 118
+        Height = 29
+        Top = 72
+        Width = 188
+        AutoComplete = True
+        AutoCompleteText = [cbactEnabled, cbactSearchAscending]
+        ItemHeight = 21
+        TabOrder = 2
+      end
+      object Label10: TLabel
+        Left = 55
+        Height = 21
+        Top = 109
+        Width = 58
+        Caption = 'Histórico'
+      end
+      object edHist: TEdit
+        Left = 118
+        Height = 29
+        Top = 105
+        Width = 263
+        CharCase = ecUppercase
+        MaxLength = 30
+        TabOrder = 3
+      end
+    end
+    object Panel4: TPanel
+      Left = 0
+      Height = 312
+      Top = 160
+      Width = 710
+      Align = alClient
+      BevelOuter = bvNone
+      ClientHeight = 312
+      ClientWidth = 710
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Segoe UI Light'
+      ParentFont = False
+      TabOrder = 1
+      object Pc: TPageControl
+        Left = 0
+        Height = 312
+        Top = 0
+        Width = 710
+        ActivePage = tsLog
+        Align = alClient
+        TabIndex = 0
+        TabOrder = 0
+        object tsLog: TTabSheet
+          Caption = 'Andamento'
+          ClientHeight = 278
+          ClientWidth = 702
+          object mmLog: TMemo
+            Left = 0
+            Height = 278
+            Top = 0
+            Width = 702
+            Align = alClient
+            ScrollBars = ssAutoBoth
+            TabOrder = 0
+          end
+        end
+        object tsDados: TTabSheet
+          Caption = 'Infomações'
+          ClientHeight = 278
+          ClientWidth = 702
+          object grPesq: TDBGrid
+            Left = 0
+            Height = 242
+            Top = 0
+            Width = 702
+            Align = alClient
+            BorderStyle = bsNone
+            Color = clWhite
+            Columns = <>
+            DataSource = ds
+            DefaultRowHeight = 29
+            FixedColor = clWhite
+            FixedCols = 0
+            Options = [dgTitles, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+            ReadOnly = True
+            Scrollbars = ssAutoBoth
+            TabOrder = 0
+            TitleFont.Color = clBlack
+            TitleFont.Height = -16
+            TitleFont.Name = 'Segoe UI Light'
+          end
+          object nvPesq: TDBNavigator
+            Left = 0
+            Height = 36
+            Top = 242
+            Width = 702
+            Align = alBottom
+            BevelOuter = bvNone
+            ChildSizing.EnlargeHorizontal = crsScaleChilds
+            ChildSizing.EnlargeVertical = crsScaleChilds
+            ChildSizing.ShrinkHorizontal = crsScaleChilds
+            ChildSizing.ShrinkVertical = crsScaleChilds
+            ChildSizing.Layout = cclLeftToRightThenTopToBottom
+            ChildSizing.ControlsPerLine = 100
+            ClientHeight = 36
+            ClientWidth = 702
+            DataSource = ds
+            Flat = True
+            Options = []
+            TabOrder = 1
+            VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+          end
+        end
+      end
+    end
+  end
+  object AL: TActionList
+    Images = DM.IL18
+    Left = 52
+    Top = 52
+    object Sair: TAction
+      Category = 'Manutencao'
+      Caption = '&Sair'
+      Hint = 'Clique para finalizar'
+      ImageIndex = 5
+      OnExecute = SairExecute
+    end
+    object calcular: TAction
+      Caption = 'Calcular'
+      Hint = 'Calcular o Rateio'
+      ImageIndex = 8
+      OnExecute = calcularExecute
+    end
+    object pesqisar: TAction
+      Caption = 'Pesquisar'
+      Hint = 'Pesquisar Pagamentos Realizados na Data Base'
+      ImageIndex = 43
+      OnExecute = pesqisarExecute
+    end
+    object gravar: TAction
+      Caption = 'Gravar'
+      Hint = 'Gravar a diferença como aplicação RNP'
+      ImageIndex = 42
+      OnExecute = gravarExecute
+    end
+  end
+  object ds: TDataSource
+    Left = 103
+    Top = 57
+  end
+end

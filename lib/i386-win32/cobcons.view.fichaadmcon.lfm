@@ -1,0 +1,230 @@
+inherited FrmFichaAdmCon: TFrmFichaAdmCon
+  Left = 107
+  Height = 469
+  Top = 114
+  Width = 659
+  Caption = 'Ficha AdmCon'
+  ClientHeight = 469
+  ClientWidth = 659
+  OnCreate = FormCreate
+  inherited pnTitulo: TPanel
+    Width = 639
+  end
+  inherited pnAcoes: TPanel
+    Height = 362
+    ClientHeight = 362
+  end
+  inherited pnBack: TPanel
+    Height = 362
+    Width = 498
+    ClientHeight = 362
+    ClientWidth = 498
+    object edCodigo: TEdit[0]
+      Left = 142
+      Height = 29
+      Top = 6
+      Width = 80
+      Alignment = taCenter
+      NumbersOnly = True
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 6
+      Text = '000'
+    end
+    object Label1: TLabel[1]
+      Left = 87
+      Height = 21
+      Top = 9
+      Width = 49
+      Caption = 'Código'
+      ParentColor = False
+    end
+    object edNomeFantasia: TEdit[2]
+      Left = 142
+      Height = 29
+      Top = 37
+      Width = 320
+      CharCase = ecUppercase
+      MaxLength = 50
+      TabOrder = 0
+    end
+    object Label2: TLabel[3]
+      Left = 38
+      Height = 21
+      Top = 40
+      Width = 98
+      Caption = 'Nome Fantasia'
+      ParentColor = False
+    end
+    object edRazaoSocial: TEdit[4]
+      Left = 142
+      Height = 29
+      Top = 68
+      Width = 320
+      CharCase = ecUppercase
+      MaxLength = 80
+      TabOrder = 1
+    end
+    object Label3: TLabel[5]
+      Left = 53
+      Height = 21
+      Top = 70
+      Width = 83
+      Caption = 'Razão Social'
+      ParentColor = False
+    end
+    object edCnpj: TEdit[6]
+      Left = 142
+      Height = 29
+      Top = 100
+      Width = 320
+      CharCase = ecUppercase
+      MaxLength = 18
+      TabOrder = 2
+    end
+    object Label4: TLabel[7]
+      Left = 103
+      Height = 21
+      Top = 104
+      Width = 33
+      Caption = 'CNPJ'
+      ParentColor = False
+    end
+    object dtVigencia: TDateTimePicker[8]
+      Left = 142
+      Height = 29
+      Top = 132
+      Width = 101
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      TabOrder = 3
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 44938
+      Time = 0.373929259258148
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+    end
+    object Label5: TLabel[9]
+      Left = 79
+      Height = 21
+      Top = 135
+      Width = 57
+      Caption = 'Vigencia'
+      ParentColor = False
+    end
+    object Label6: TLabel[10]
+      Left = 32
+      Height = 21
+      Top = 167
+      Width = 105
+      Caption = 'Comissão sobre'
+      ParentColor = False
+    end
+    object cboUnidade: TComboBox[11]
+      Left = 142
+      Height = 29
+      Top = 164
+      Width = 256
+      ItemHeight = 21
+      ItemIndex = 0
+      Items.Strings = (
+        'Total das Vendas'
+        'Qtde de Cotas Vendidas'
+      )
+      TabOrder = 4
+      Text = 'Total das Vendas'
+    end
+    object Label7: TLabel[12]
+      Left = 17
+      Height = 21
+      Top = 196
+      Width = 119
+      Caption = 'Bônus de Entrega'
+      ParentColor = False
+    end
+    object edPcEntrega: TEdit[13]
+      Left = 142
+      Height = 29
+      Top = 196
+      Width = 80
+      Alignment = taCenter
+      TabOrder = 5
+      Text = '000'
+    end
+    object GroupBox1: TGroupBox[14]
+      Left = 17
+      Height = 92
+      Top = 228
+      Width = 445
+      Caption = 'Bônus sobre Permanência'
+      ClientHeight = 66
+      ClientWidth = 441
+      TabOrder = 7
+      object Label8: TLabel
+        Left = 71
+        Height = 21
+        Top = 3
+        Width = 47
+        Caption = 'Parcela'
+        ParentColor = False
+      end
+      object edMesPer: TEdit
+        Left = 123
+        Height = 29
+        Top = 0
+        Width = 56
+        Alignment = taCenter
+        MaxLength = 3
+        NumbersOnly = True
+        TabOrder = 0
+        Text = '000'
+      end
+      object Label9: TLabel
+        Left = 48
+        Height = 21
+        Top = 35
+        Width = 70
+        Caption = 'Percentual'
+        ParentColor = False
+      end
+      object edPcPer: TEdit
+        Left = 123
+        Height = 29
+        Top = 32
+        Width = 80
+        Alignment = taCenter
+        TabOrder = 1
+        Text = '000'
+      end
+    end
+    object Label10: TLabel[15]
+      Left = 27
+      Height = 21
+      Top = 326
+      Width = 109
+      Caption = 'Últ.Faixa Comiss.'
+      ParentColor = False
+    end
+    object cboUltimaFaixa: THNSCombox[16]
+      Left = 142
+      Height = 29
+      Top = 324
+      Width = 323
+      ItemHeight = 21
+      TabOrder = 8
+    end
+  end
+  inherited AL: TActionList
+    inherited Gravar: TAction
+      OnExecute = GravarExecute
+    end
+  end
+end

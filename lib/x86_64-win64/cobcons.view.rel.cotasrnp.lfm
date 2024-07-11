@@ -1,0 +1,557 @@
+object FrmRelCotasRnp: TFrmRelCotasRnp
+  Left = 1656
+  Height = 317
+  Top = 149
+  Width = 800
+  Caption = 'FrmRelCotasRnp'
+  ClientHeight = 317
+  ClientWidth = 800
+  LCLVersion = '2.0.12.0'
+  object rl: TRLReport
+    Left = 0
+    Height = 1123
+    Top = 0
+    Width = 794
+    DataSource = ds
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Arial'
+    Margins.LeftMargin = 5
+    Margins.TopMargin = 5
+    Margins.RightMargin = 5
+    Margins.BottomMargin = 5
+    Title = 'INADIMPLENTES POR GRUPO'
+    BeforePrint = rlBeforePrint
+    object bndSum: TRLBand
+      Left = 19
+      Height = 18
+      Top = 121
+      Width = 756
+      BandType = btSummary
+      Borders.Sides = sdCustom
+      Borders.DrawLeft = False
+      Borders.DrawTop = False
+      Borders.DrawRight = False
+      Borders.DrawBottom = False
+      Color = clWhite
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      BeforePrint = bndSumBeforePrint
+      object RLDBResult1: TRLDBResult
+        Left = 499
+        Height = 16
+        Top = 2
+        Width = 82
+        Alignment = taRightJustify
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = True
+        Borders.DrawRight = False
+        Borders.DrawBottom = False
+        DataField = 'VLRRNP'
+        DataSource = ds
+        DisplayMask = ',#0.00'
+        Holder = rlRnp
+        Info = riSum
+        Transparent = False
+      end
+      object RLDBResult3: TRLDBResult
+        Left = 584
+        Height = 16
+        Top = 2
+        Width = 81
+        Alignment = taRightJustify
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = True
+        Borders.DrawRight = False
+        Borders.DrawBottom = False
+        DataField = 'RATFUT'
+        DataSource = ds
+        DisplayMask = ',#0.00'
+        Holder = rlRatFut
+        Info = riSum
+        Transparent = False
+      end
+      object lbTotGru: TRLLabel
+        Left = 8
+        Height = 16
+        Top = 2
+        Width = 40
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = True
+        Borders.DrawRight = False
+        Borders.DrawBottom = False
+        Caption = 'GRUPO'
+        Holder = RLDBText1
+        Transparent = False
+      end
+    end
+    object bndHeader: TRLBand
+      Left = 19
+      Height = 33
+      Top = 19
+      Width = 756
+      BandType = btHeader
+      Borders.Sides = sdCustom
+      Borders.DrawLeft = False
+      Borders.DrawTop = False
+      Borders.DrawRight = False
+      Borders.DrawBottom = True
+      Color = 13948116
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      object RLDBText7: TRLDBText
+        Left = 0
+        Height = 16
+        Top = 0
+        Width = 50
+        Align = faLeftTop
+        DataField = 'nm_prs'
+        DataSource = dsPrs
+        Transparent = False
+      end
+      object RLSystemInfo3: TRLSystemInfo
+        Left = 715
+        Height = 16
+        Top = 0
+        Width = 41
+        Align = faRightTop
+        Alignment = taRightJustify
+        Transparent = False
+      end
+      object RLSystemInfo1: TRLSystemInfo
+        Left = 358
+        Height = 16
+        Top = 16
+        Width = 40
+        Align = faCenterBottom
+        Alignment = taCenter
+        Info = itTitle
+        Transparent = False
+      end
+    end
+    object bndSumRep: TRLBand
+      Left = 19
+      Height = 16
+      Top = 139
+      Width = 756
+      BandType = btSummary
+      Color = 13948116
+      ParentColor = False
+      Transparent = False
+      object RLSystemInfo5: TRLSystemInfo
+        Left = 0
+        Height = 14
+        Top = 0
+        Width = 756
+        Align = faWidth
+        Alignment = taRightJustify
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = [fsItalic]
+        Info = itNow
+        ParentFont = False
+        Text = 'Impresso em '
+        Transparent = False
+      end
+    end
+    object bndRodape: TRLBand
+      Left = 19
+      Height = 16
+      Top = 155
+      Width = 756
+      BandType = btFooter
+      Color = 13948116
+      ParentColor = False
+      Transparent = False
+      object RLSystemInfo4: TRLSystemInfo
+        Left = 100
+        Height = 14
+        Top = 0
+        Width = 99
+        Align = faLeftOnly
+        Info = itLastPageNumber
+        Text = '/ '
+        Transparent = False
+      end
+      object RLSystemInfo6: TRLSystemInfo
+        Left = 0
+        Height = 16
+        Top = 0
+        Width = 100
+        Align = faLeftMost
+        Info = itPageNumber
+        Text = 'PAG: '
+        Transparent = False
+      end
+    end
+    object grGrupo: TRLGroup
+      Left = 19
+      Height = 69
+      Top = 52
+      Width = 756
+      DataFields = 'GRUPO'
+      AfterPrint = grGrupoAfterPrint
+      object dtGrupo: TRLBand
+        Left = 0
+        Height = 18
+        Top = 34
+        Width = 756
+        GreenBarPrint = True
+        AfterPrint = dtGrupoAfterPrint
+        object RLDBText1: TRLDBText
+          Left = 8
+          Height = 14
+          Top = 2
+          Width = 40
+          AutoSize = False
+          DataField = 'grupo'
+          DataSource = ds
+        end
+        object RLDBText2: TRLDBText
+          Left = 360
+          Height = 14
+          Top = 2
+          Width = 50
+          Alignment = taCenter
+          AutoSize = False
+          DataField = 'REGAPLIC'
+          DataSource = ds
+          Visible = False
+        end
+        object RLDBText3: TRLDBText
+          Left = 418
+          Height = 14
+          Top = 2
+          Width = 77
+          Alignment = taRightJustify
+          AutoSize = False
+          DataField = 'VLRBEM'
+          DataSource = ds
+        end
+        object rlRatFut: TRLDBText
+          Left = 588
+          Height = 14
+          Top = 2
+          Width = 77
+          Alignment = taRightJustify
+          AutoSize = False
+          DataField = 'RATFUT'
+          DataSource = ds
+        end
+        object rlRnp: TRLDBText
+          Left = 504
+          Height = 14
+          Top = 2
+          Width = 77
+          Alignment = taRightJustify
+          AutoSize = False
+          DataField = 'vlrrnp'
+          DataSource = ds
+        end
+        object RLDBText8: TRLDBText
+          Left = 50
+          Height = 14
+          Top = 2
+          Width = 22
+          AutoSize = False
+          DataField = 'seq'
+          DataSource = ds
+        end
+        object RLDBText9: TRLDBText
+          Left = 74
+          Height = 14
+          Top = 2
+          Width = 28
+          AutoSize = False
+          DataField = 'cota'
+          DataSource = ds
+        end
+        object RLDBText10: TRLDBText
+          Left = 102
+          Height = 14
+          Top = 2
+          Width = 218
+          AutoSize = False
+          DataField = 'nome'
+          DataSource = ds
+        end
+        object rlPcRateio: TRLDBText
+          Left = 670
+          Height = 14
+          Top = 2
+          Width = 78
+          Alignment = taCenter
+          AutoSize = False
+          DataField = 'PCRATEIO'
+          DataSource = ds
+        end
+        object RLDBText4: TRLDBText
+          Left = 326
+          Height = 14
+          Top = 2
+          Width = 26
+          Alignment = taCenter
+          AutoSize = False
+          DataField = 'SIT_COBR'
+          DataSource = ds
+        end
+      end
+      object bndSumGrupo: TRLBand
+        Left = 0
+        Height = 18
+        Top = 52
+        Width = 756
+        BandType = btSummary
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = False
+        Borders.DrawRight = False
+        Borders.DrawBottom = False
+        Color = clWhite
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        Transparent = False
+        object RLDBResult7: TRLDBResult
+          Left = 509
+          Height = 16
+          Top = 2
+          Width = 72
+          Alignment = taRightJustify
+          Borders.Sides = sdCustom
+          Borders.DrawLeft = False
+          Borders.DrawTop = True
+          Borders.DrawRight = False
+          Borders.DrawBottom = False
+          DataField = 'vlrrnp'
+          DataSource = ds
+          DisplayMask = ',#0.00'
+          Holder = rlRnp
+          Info = riSum
+          Transparent = False
+        end
+        object RLDBResult8: TRLDBResult
+          Left = 8
+          Height = 16
+          Top = 2
+          Width = 82
+          Borders.Sides = sdCustom
+          Borders.DrawLeft = False
+          Borders.DrawTop = True
+          Borders.DrawRight = False
+          Borders.DrawBottom = False
+          DataField = 'cota'
+          Info = riCount
+          Text = 'Cotas: '
+          Transparent = False
+        end
+        object RLDBResult9: TRLDBResult
+          Left = 584
+          Height = 16
+          Top = 2
+          Width = 81
+          Alignment = taRightJustify
+          Borders.Sides = sdCustom
+          Borders.DrawLeft = False
+          Borders.DrawTop = True
+          Borders.DrawRight = False
+          Borders.DrawBottom = False
+          DataField = 'RATFUT'
+          DataSource = ds
+          DisplayMask = ',#0.00'
+          Holder = rlRatFut
+          Info = riSum
+          Transparent = False
+        end
+        object RLDBResult10: TRLDBResult
+          Left = 662
+          Height = 16
+          Top = 2
+          Width = 94
+          Alignment = taCenter
+          Borders.Sides = sdCustom
+          Borders.DrawLeft = False
+          Borders.DrawTop = True
+          Borders.DrawRight = False
+          Borders.DrawBottom = False
+          DataField = 'PCRATEIO'
+          DataSource = ds
+          DisplayMask = ',#0.00000'
+          Holder = rlPcRateio
+          Info = riSum
+          Transparent = False
+        end
+      end
+      object bndCabGrupo: TRLBand
+        Left = 0
+        Height = 34
+        Top = 0
+        Width = 756
+        BandType = btHeader
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = False
+        Borders.DrawRight = False
+        Borders.DrawBottom = True
+        Color = 13948116
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        Transparent = False
+        object RLLabel2: TRLLabel
+          Left = 8
+          Height = 14
+          Top = 17
+          Width = 40
+          Caption = 'GRUPO'
+          Holder = RLDBText1
+          Transparent = False
+        end
+        object RLLabel3: TRLLabel
+          Left = 50
+          Height = 14
+          Top = 17
+          Width = 34
+          Caption = 'COTA'
+          Holder = RLDBText8
+          Transparent = False
+        end
+        object RLLabel4: TRLLabel
+          Left = 102
+          Height = 14
+          Top = 17
+          Width = 34
+          Caption = 'NOME'
+          Holder = RLDBText10
+          Transparent = False
+        end
+        object RLLabel5: TRLLabel
+          Left = 428
+          Height = 14
+          Top = 17
+          Width = 67
+          Alignment = taRightJustify
+          Caption = 'VALOR BEM'
+          Holder = RLDBText3
+          Transparent = False
+        end
+        object RLLabel6: TRLLabel
+          Left = 532
+          Height = 14
+          Top = 17
+          Width = 49
+          Alignment = taRightJustify
+          Caption = 'VLR RNP'
+          Holder = rlRnp
+          Transparent = False
+        end
+        object RLLabel7: TRLLabel
+          Left = 359
+          Height = 14
+          Top = 17
+          Width = 52
+          Alignment = taCenter
+          Caption = 'REG.APL.'
+          Holder = RLDBText2
+          Transparent = False
+          Visible = False
+        end
+        object RLLabel9: TRLLabel
+          Left = 617
+          Height = 14
+          Top = 17
+          Width = 48
+          Alignment = taRightJustify
+          Caption = 'RAT.FUT'
+          Holder = rlRatFut
+          Transparent = False
+        end
+        object RLDBText11: TRLDBText
+          Left = 8
+          Height = 14
+          Top = 1
+          Width = 88
+          AutoSize = False
+          DataField = 'grupo'
+          DataSource = ds
+          Text = 'GRUPO: '
+          Transparent = False
+        end
+        object RLLabel10: TRLLabel
+          Left = 682
+          Height = 14
+          Top = 17
+          Width = 54
+          Alignment = taCenter
+          Caption = '% RATEIO'
+          Holder = rlPcRateio
+          Transparent = False
+        end
+        object RLLabel8: TRLLabel
+          Left = 329
+          Height = 14
+          Top = 17
+          Width = 20
+          Alignment = taCenter
+          Caption = 'SIT'
+          Holder = RLDBText4
+          Transparent = False
+        end
+        object RLDBText14: TRLDBText
+          Left = 95
+          Height = 14
+          Top = 1
+          Width = 128
+          AutoSize = False
+          DataField = 'PRIM_REU'
+          DataSource = ds
+          Text = 'PRIM.REU: '
+          Transparent = False
+        end
+        object RLDBText15: TRLDBText
+          Left = 232
+          Height = 14
+          Top = 1
+          Width = 88
+          AutoSize = False
+          DataField = 'REGAPLIC'
+          DataSource = ds
+          Text = 'REG.APLIC: '
+          Transparent = False
+        end
+      end
+    end
+  end
+  object ds: TDataSource
+    Left = 268
+    Top = 228
+  end
+  object dsPrs: TDataSource
+    Left = 308
+    Top = 228
+  end
+  object dsttgru: TDataSource
+    Left = 348
+    Top = 228
+  end
+end

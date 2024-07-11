@@ -1,0 +1,374 @@
+object FrmRecAutomatico: TFrmRecAutomatico
+  Left = 134
+  Height = 633
+  Top = 30
+  Width = 1132
+  BorderStyle = bsNone
+  BorderWidth = 5
+  Caption = 'Recebimento Automático de Comissões'
+  ClientHeight = 633
+  ClientWidth = 1132
+  Font.Color = clWhite
+  Font.Height = -16
+  Font.Name = 'Segoe UI Light'
+  KeyPreview = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  Position = poMainFormCenter
+  ShowHint = True
+  LCLVersion = '2.2.6.0'
+  object pnAcoes: TPanel
+    Left = 10
+    Height = 487
+    Top = 81
+    Width = 136
+    Align = alLeft
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 487
+    ClientWidth = 136
+    Color = clMoneyGreen
+    ParentColor = False
+    TabOrder = 0
+    object SpeedButton4: TSpeedButton
+      Left = 0
+      Height = 47
+      Top = 94
+      Width = 136
+      Action = sair
+      Align = alTop
+      Flat = True
+      Margin = 2
+    end
+    object SpeedButton6: TSpeedButton
+      Left = 0
+      Height = 47
+      Top = 47
+      Width = 136
+      Action = imp
+      Align = alTop
+      Enabled = False
+      Flat = True
+      Margin = 2
+    end
+    object SpeedButton5: TSpeedButton
+      Left = 0
+      Height = 47
+      Top = 0
+      Width = 136
+      Action = abrir
+      Align = alTop
+      Flat = True
+      Images = DM.IL18
+      ImageIndex = 49
+      Margin = 2
+    end
+  end
+  object pnBackground: TPanel
+    Left = 151
+    Height = 487
+    Top = 81
+    Width = 971
+    Align = alClient
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 487
+    ClientWidth = 971
+    Color = clSkyBlue
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 1
+    object Panel3: TPanel
+      Left = 5
+      Height = 63
+      Top = 5
+      Width = 961
+      Align = alTop
+      BorderSpacing.Around = 5
+      BevelOuter = bvNone
+      ClientHeight = 63
+      ClientWidth = 961
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 8
+        Height = 21
+        Top = 19
+        Width = 57
+        Caption = 'Empresa'
+        ParentColor = False
+      end
+      object cboEmp: THNSCombox
+        Left = 72
+        Height = 29
+        Top = 16
+        Width = 172
+        AutoComplete = True
+        AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
+        ItemHeight = 21
+        TabOrder = 1
+      end
+      object edArq: TEdit
+        Left = 400
+        Height = 29
+        Top = 16
+        Width = 432
+        Color = clBtnFace
+        ReadOnly = True
+        TabStop = False
+        TabOrder = 0
+      end
+      object Label2: TLabel
+        Left = 251
+        Height = 21
+        Top = 19
+        Width = 144
+        Caption = 'Arquivo de comissões'
+        ParentColor = False
+      end
+    end
+    object nvPesq: TDBNavigator
+      Left = 5
+      Height = 36
+      Top = 446
+      Width = 961
+      Align = alBottom
+      BevelOuter = bvNone
+      BorderSpacing.Around = 5
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 36
+      ClientWidth = 961
+      DataSource = ds
+      Flat = True
+      Options = []
+      TabOrder = 1
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+    end
+    object grPesq: TDBGrid
+      Left = 5
+      Height = 368
+      Top = 73
+      Width = 961
+      Align = alClient
+      BorderSpacing.Around = 5
+      BorderStyle = bsNone
+      Color = clWhite
+      Columns = <>
+      DataSource = ds
+      DefaultRowHeight = 29
+      FixedColor = clWhite
+      FixedCols = 0
+      Options = [dgTitles, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+      ReadOnly = True
+      Scrollbars = ssAutoBoth
+      TabOrder = 2
+      TitleFont.Color = clBlack
+      TitleFont.Height = -16
+      TitleFont.Name = 'Segoe UI Light'
+      OnDblClick = grPesqDblClick
+    end
+  end
+  object pnTitulo: TPanel
+    Left = 10
+    Height = 66
+    Top = 10
+    Width = 1112
+    Align = alTop
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    Caption = 'Recebimento Automático de Comissões'
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -28
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 2
+    OnMouseMove = pnTituloMouseMove
+  end
+  object pnRodape: TPanel
+    Left = 10
+    Height = 50
+    Top = 573
+    Width = 1112
+    Align = alBottom
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 3
+  end
+  object AL: TActionList
+    Images = DM.IL18
+    Left = 432
+    Top = 160
+    object sair: TAction
+      Caption = 'Sair'
+      ImageIndex = 5
+      OnExecute = sairExecute
+    end
+    object abrir: TAction
+      Caption = 'Planilha'
+      ImageIndex = 49
+      OnExecute = abrirExecute
+    end
+    object imp: TAction
+      Caption = 'Imprimir'
+      Hint = 'Imprime relatório da baixa'
+      ImageIndex = 28
+      OnExecute = impExecute
+    end
+  end
+  object ds: TDataSource
+    DataSet = lin
+    Left = 504
+    Top = 160
+  end
+  object lin: TBufDataset
+    FieldDefs = <>
+    Left = 464
+    Top = 160
+    object linVenda: TLongintField
+      Alignment = taCenter
+      DisplayWidth = 8
+      FieldKind = fkData
+      FieldName = 'Venda'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '000000'
+    end
+    object linPcl: TLongintField
+      Alignment = taCenter
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'Pcl'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '00'
+    end
+    object linDtPag: TDateField
+      Alignment = taCenter
+      DisplayLabel = 'Pagto'
+      DisplayWidth = 8
+      FieldKind = fkData
+      FieldName = 'DtPag'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = 'dd/mm/yyyy'
+    end
+    object linBem: TStringField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Bem'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object linContrato: TStringField
+      DisplayWidth = 8
+      FieldKind = fkData
+      FieldName = 'Contrato'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object linNome: TStringField
+      DisplayWidth = 20
+      FieldKind = fkData
+      FieldName = 'Nome'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      Size = 60
+    end
+    object linGrupo: TStringField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'Grupo'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 10
+    end
+    object linCota: TLongintField
+      Alignment = taCenter
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'Cota'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0000'
+    end
+    object linValor: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Valor'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = ',#.00'
+    end
+    object linComissao: TFloatField
+      DisplayWidth = 7
+      FieldKind = fkData
+      FieldName = 'Comissao'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = ',#.00'
+    end
+    object linobs: TStringField
+      DisplayLabel = 'Obs'
+      DisplayWidth = 20
+      FieldKind = fkData
+      FieldName = 'obs'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+  end
+end

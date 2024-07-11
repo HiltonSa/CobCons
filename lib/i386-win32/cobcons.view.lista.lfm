@@ -1,0 +1,131 @@
+object FrmLista: TFrmLista
+  Left = 542
+  Height = 387
+  Top = 172
+  Width = 456
+  BorderStyle = bsNone
+  BorderWidth = 5
+  ClientHeight = 387
+  ClientWidth = 456
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = 'Tahoma'
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  LCLVersion = '2.2.0.4'
+  object pnTitulo: TPanel
+    Left = 10
+    Height = 82
+    Top = 10
+    Width = 436
+    Align = alTop
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    Caption = 'Titulo'
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -24
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+    OnMouseMove = pnTituloMouseMove
+  end
+  object pnBack: TPanel
+    Left = 10
+    Height = 280
+    Top = 97
+    Width = 436
+    Align = alClient
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 280
+    ClientWidth = 436
+    Color = clGray
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 1
+    object grLista: TDBGrid
+      Left = 0
+      Height = 239
+      Top = 0
+      Width = 436
+      Align = alClient
+      BorderSpacing.Bottom = 5
+      BorderStyle = bsNone
+      Color = clWhite
+      Columns = <      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Grupo'
+          Width = 50
+          FieldName = 'grupo'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Cota'
+          Width = 40
+          FieldName = 'cota'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Sq'
+          Width = 30
+          FieldName = 'seq'
+        end      
+        item
+          Title.Caption = 'Consorciado'
+          Width = 270
+          FieldName = 'nome'
+        end>
+      DataSource = dsLista
+      DefaultRowHeight = 29
+      FixedColor = clWhite
+      FixedCols = 0
+      Options = [dgTitles, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+      ReadOnly = True
+      Scrollbars = ssAutoBoth
+      TabOrder = 0
+      TitleFont.Color = clBlack
+      TitleFont.Height = -16
+      TitleFont.Name = 'Segoe UI Light'
+    end
+    object nvLista: TDBNavigator
+      Left = 0
+      Height = 36
+      Top = 244
+      Width = 436
+      Align = alBottom
+      BevelOuter = bvNone
+      BorderSpacing.Top = 5
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 36
+      ClientWidth = 436
+      DataSource = dsLista
+      Flat = True
+      Options = []
+      TabOrder = 1
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+    end
+  end
+  object dsLista: TDataSource
+    AutoEdit = False
+    Left = 200
+    Top = 112
+  end
+end

@@ -1,0 +1,451 @@
+inherited FrmEmpresa: TFrmEmpresa
+  Left = 303
+  Height = 528
+  Top = 116
+  Width = 744
+  Caption = 'Empresa'
+  ClientHeight = 528
+  ClientWidth = 744
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  inherited pnTitulo: TPanel
+    Width = 724
+    Caption = 'Configurações'
+  end
+  inherited pnAcoes: TPanel
+    Height = 421
+    ClientHeight = 421
+    inherited SpeedButton1: TSpeedButton
+      Top = 43
+    end
+    inherited SpeedButton2: TSpeedButton
+      Top = 84
+    end
+    object SpeedButton3: TSpeedButton[2]
+      Left = 2
+      Height = 39
+      Top = 2
+      Width = 132
+      Action = tabenc
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Margin = 2
+    end
+  end
+  inherited pnBack: TPanel
+    Height = 421
+    Width = 583
+    ClientHeight = 421
+    ClientWidth = 583
+    object PC: TPageControl[0]
+      Left = 0
+      Height = 421
+      Top = 0
+      Width = 583
+      ActivePage = tsGeral
+      Align = alClient
+      TabIndex = 0
+      TabOrder = 0
+      TabWidth = 100
+      object tsGeral: TTabSheet
+        Caption = 'Geral'
+        ClientHeight = 387
+        ClientWidth = 575
+        object Label1: TLabel
+          Left = 56
+          Height = 21
+          Top = 22
+          Width = 57
+          Caption = 'Empresa'
+          ParentColor = False
+        end
+        object edNM_PRS: TEdit
+          Left = 122
+          Height = 29
+          Top = 19
+          Width = 360
+          CharCase = ecUppercase
+          MaxLength = 50
+          TabOrder = 1
+        end
+        object edCD_CGC: TEdit
+          Left = 122
+          Height = 29
+          Top = 96
+          Width = 144
+          CharCase = ecUppercase
+          MaxLength = 18
+          OnExit = edCD_CGCExit
+          TabOrder = 3
+        end
+        object Label2: TLabel
+          Left = 80
+          Height = 21
+          Top = 99
+          Width = 33
+          Caption = 'CNPJ'
+          ParentColor = False
+        end
+        object Label3: TLabel
+          Left = 52
+          Height = 21
+          Top = 139
+          Width = 61
+          Caption = '% Multas'
+          ParentColor = False
+        end
+        object edPC_MUL: TEdit
+          Left = 122
+          Height = 29
+          Top = 136
+          Width = 80
+          Alignment = taRightJustify
+          CharCase = ecUppercase
+          MaxLength = 18
+          OnExit = edPC_MULExit
+          TabOrder = 4
+        end
+        object Label4: TLabel
+          Left = 62
+          Height = 21
+          Top = 181
+          Width = 51
+          Caption = '% Juros'
+          ParentColor = False
+        end
+        object edPC_JUR: TEdit
+          Left = 122
+          Height = 29
+          Top = 176
+          Width = 80
+          Alignment = taRightJustify
+          CharCase = ecUppercase
+          MaxLength = 18
+          OnExit = edPC_MULExit
+          TabOrder = 5
+        end
+        object Label5: TLabel
+          Left = 22
+          Height = 21
+          Top = 220
+          Width = 91
+          Caption = '% Honorários'
+          ParentColor = False
+        end
+        object edPC_HONOR: TEdit
+          Left = 122
+          Height = 29
+          Top = 216
+          Width = 80
+          Alignment = taRightJustify
+          CharCase = ecUppercase
+          MaxLength = 18
+          OnExit = edPC_MULExit
+          TabOrder = 6
+        end
+        object Label10: TLabel
+          Left = 86
+          Height = 21
+          Top = 256
+          Width = 27
+          Caption = 'Obs'
+          ParentColor = False
+        end
+        object edSTRLIB: TEdit
+          Left = 122
+          Height = 29
+          Top = 252
+          Width = 360
+          MaxLength = 50
+          ReadOnly = True
+          TabStop = False
+          TabOrder = 0
+        end
+        object edRedApl: TEdit
+          Left = 122
+          Height = 29
+          Top = 288
+          Width = 80
+          Alignment = taRightJustify
+          CharCase = ecUppercase
+          MaxLength = 18
+          OnExit = edPC_MULExit
+          TabOrder = 7
+        end
+        object Label15: TLabel
+          Left = 6
+          Height = 21
+          Top = 294
+          Width = 107
+          Caption = '% Redutor Aplic'
+          ParentColor = False
+        end
+        object Label16: TLabel
+          Left = 11
+          Height = 21
+          Top = 324
+          Width = 102
+          Caption = 'Limite Redução'
+          ParentColor = False
+        end
+        object dtLimRed: TDateTimePicker
+          Left = 122
+          Height = 29
+          Hint = 'Data limite para Redução da aplicação'
+          Top = 321
+          Width = 101
+          CenturyFrom = 1941
+          MaxDate = 2958465
+          MinDate = -53780
+          TabOrder = 8
+          TrailingSeparator = False
+          TextForNullDate = 'NULL'
+          LeadingZeros = True
+          Kind = dtkDate
+          TimeFormat = tf24
+          TimeDisplay = tdHMS
+          DateMode = dmComboBox
+          Date = 44215
+          Time = 0.773624525463674
+          UseDefaultSeparators = True
+          HideDateTimeParts = []
+          MonthNames = 'Long'
+        end
+        object edNM_REL: TEdit
+          Left = 122
+          Height = 29
+          Hint = 'Nome nos relatórios de VENDAS'
+          Top = 56
+          Width = 360
+          CharCase = ecUppercase
+          MaxLength = 50
+          TabOrder = 2
+        end
+        object Label18: TLabel
+          Left = 9
+          Height = 21
+          Top = 59
+          Width = 104
+          Caption = 'Nome Relatório'
+          ParentColor = False
+        end
+      end
+      object tsSag: TTabSheet
+        Caption = 'SAG'
+        ClientHeight = 387
+        ClientWidth = 575
+        object Label6: TLabel
+          Left = 122
+          Height = 21
+          Top = 27
+          Width = 55
+          Caption = 'Contato'
+          ParentColor = False
+        end
+        object edNM_CONTATO: TEdit
+          Left = 185
+          Height = 29
+          Top = 24
+          Width = 360
+          CharCase = ecUppercase
+          MaxLength = 80
+          TabOrder = 0
+        end
+        object edTELCONTATO: TEdit
+          Left = 185
+          Height = 29
+          Top = 58
+          Width = 128
+          CharCase = ecUppercase
+          MaxLength = 13
+          OnExit = edTELCONTATOExit
+          TabOrder = 1
+        end
+        object Label7: TLabel
+          Left = 123
+          Height = 21
+          Top = 61
+          Width = 54
+          Caption = 'Telefone'
+          ParentColor = False
+        end
+        object Label8: TLabel
+          Left = 136
+          Height = 21
+          Top = 95
+          Width = 41
+          Caption = 'e-Mail'
+          ParentColor = False
+        end
+        object edMAILCONTATO: TEdit
+          Left = 185
+          Height = 29
+          Top = 92
+          Width = 360
+          MaxLength = 60
+          TabOrder = 2
+        end
+        object edULTSAG: TDateTimePicker
+          Left = 185
+          Height = 29
+          Top = 128
+          Width = 101
+          CenturyFrom = 1941
+          MaxDate = 2958465
+          MinDate = -53780
+          TabOrder = 3
+          TrailingSeparator = False
+          TextForNullDate = 'NULL'
+          LeadingZeros = True
+          Kind = dtkDate
+          TimeFormat = tf24
+          TimeDisplay = tdHMS
+          DateMode = dmComboBox
+          Date = 44215
+          Time = 0.773624525463674
+          UseDefaultSeparators = True
+          HideDateTimeParts = []
+          MonthNames = 'Long'
+        end
+        object Label9: TLabel
+          Left = 122
+          Height = 21
+          Top = 133
+          Width = 55
+          Caption = 'Últ. SAG'
+          ParentColor = False
+        end
+        object Label11: TLabel
+          Left = 73
+          Height = 21
+          Top = 169
+          Width = 104
+          Caption = 'Sit.Enc.Contabil'
+          ParentColor = False
+        end
+        object edStGrEncCt: TEdit
+          Left = 185
+          Height = 29
+          Hint = 'Situação que identifica Grupo Encerrado Contabilmente'
+          Top = 166
+          Width = 101
+          CharCase = ecUppercase
+          MaxLength = 5
+          TabOrder = 4
+        end
+        object Label12: TLabel
+          Left = 61
+          Height = 21
+          Top = 203
+          Width = 116
+          Caption = 'Fase Ajuizamento'
+          ParentColor = False
+        end
+        object edFaseAjuiz: TEdit
+          Left = 185
+          Height = 29
+          Hint = 'Fase Jurídica que indica o Ajuizamento efetivo da Cota'
+          Top = 202
+          Width = 101
+          CharCase = ecUppercase
+          MaxLength = 5
+          TabOrder = 5
+        end
+        object Label13: TLabel
+          Left = 61
+          Height = 21
+          Top = 240
+          Width = 116
+          Caption = 'Dt. Recomp. Sldo'
+          ParentColor = False
+        end
+        object edRecSaldo: TDateTimePicker
+          Left = 185
+          Height = 29
+          Hint = 'Data da Recomposição de Saldo RNP'
+          Top = 236
+          Width = 101
+          CenturyFrom = 1941
+          MaxDate = 2958465
+          MinDate = -53780
+          TabOrder = 6
+          TrailingSeparator = False
+          TextForNullDate = 'NULL'
+          LeadingZeros = True
+          Kind = dtkDate
+          TimeFormat = tf24
+          TimeDisplay = tdHMS
+          DateMode = dmComboBox
+          Date = 44215
+          Time = 0.773624525463674
+          UseDefaultSeparators = True
+          HideDateTimeParts = []
+          MonthNames = 'Long'
+        end
+        object Label14: TLabel
+          Left = 8
+          Height = 21
+          Top = 276
+          Width = 169
+          Caption = 'Dt. Recalculo Com. Perm.'
+          ParentColor = False
+        end
+        object dtRcCmPer: TDateTimePicker
+          Left = 185
+          Height = 29
+          Hint = 'Início Recalculo Comissão de Permanência (5 anos antes de 30/06/2021)'
+          Top = 272
+          Width = 101
+          CenturyFrom = 1941
+          MaxDate = 2958465
+          MinDate = -53780
+          TabOrder = 7
+          TrailingSeparator = False
+          TextForNullDate = 'NULL'
+          LeadingZeros = True
+          Kind = dtkDate
+          TimeFormat = tf24
+          TimeDisplay = tdHMS
+          DateMode = dmComboBox
+          Date = 44215
+          Time = 0.773624525463674
+          UseDefaultSeparators = True
+          HideDateTimeParts = []
+          MonthNames = 'Long'
+        end
+        object Label17: TLabel
+          Left = 80
+          Height = 21
+          Top = 310
+          Width = 96
+          Caption = 'Vlr Limite Exig:'
+          ParentColor = False
+        end
+        object edLimExi: TEdit
+          Left = 185
+          Height = 29
+          Hint = 'Valor limite para exigibilidade RNP'
+          Top = 305
+          Width = 80
+          Alignment = taRightJustify
+          CharCase = ecUppercase
+          MaxLength = 18
+          OnExit = edPC_MULExit
+          TabOrder = 8
+        end
+      end
+    end
+  end
+  inherited AL: TActionList
+    inherited Gravar: TAction
+      OnExecute = GravarExecute
+    end
+    object tabenc: TAction[2]
+      Caption = 'TabularDados'
+      Hint = 'Tabular dados de Grupos Encerrados'
+      ImageIndex = 65
+      OnExecute = tabencExecute
+    end
+  end
+end

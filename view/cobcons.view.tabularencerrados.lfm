@@ -1,0 +1,248 @@
+object FrmTabularEncerrados: TFrmTabularEncerrados
+  Left = 307
+  Height = 464
+  Top = 125
+  Width = 758
+  BorderStyle = bsNone
+  BorderWidth = 5
+  Caption = 'Tabular Encerrados'
+  ClientHeight = 464
+  ClientWidth = 758
+  Font.Color = clWhite
+  Font.Height = -16
+  Font.Name = 'Segoe UI Light'
+  KeyPreview = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  Position = poMainFormCenter
+  ShowHint = True
+  LCLVersion = '2.2.0.4'
+  object pnTitulo: TPanel
+    Left = 10
+    Height = 82
+    Top = 10
+    Width = 738
+    Align = alTop
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    Caption = 'Tabular Encerrados'
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -24
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+  end
+  object pnRodape: TPanel
+    Left = 10
+    Height = 50
+    Top = 404
+    Width = 738
+    Align = alBottom
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 1
+  end
+  object pnAcoes: TPanel
+    Left = 10
+    Height = 302
+    Top = 97
+    Width = 136
+    Align = alLeft
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 302
+    ClientWidth = 136
+    Color = clGray
+    ParentColor = False
+    TabOrder = 2
+    object btnSair: TSpeedButton
+      Left = 2
+      Height = 47
+      Top = 149
+      Width = 132
+      Action = Sair
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Margin = 2
+    end
+    object btnIncluir: TSpeedButton
+      Left = 2
+      Height = 47
+      Top = 2
+      Width = 132
+      Action = Executar
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Margin = 2
+    end
+    object btnRel: TSpeedButton
+      Left = 2
+      Height = 47
+      Top = 51
+      Width = 132
+      Action = rnp
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Margin = 2
+    end
+    object btnRes: TSpeedButton
+      Left = 2
+      Height = 47
+      Top = 100
+      Width = 132
+      Action = resumo
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Margin = 2
+    end
+  end
+  object pnBack: TPanel
+    Left = 151
+    Height = 302
+    Top = 97
+    Width = 597
+    Align = alClient
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 302
+    ClientWidth = 597
+    Color = clGray
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 3
+    object Label1: TLabel
+      Left = 24
+      Height = 21
+      Top = 25
+      Width = 258
+      Caption = 'Considerar Inadimplente a partir de R$'
+    end
+    object Label2: TLabel
+      Left = 78
+      Height = 21
+      Top = 56
+      Width = 204
+      Caption = 'Considerar Mov. Financeiro até'
+    end
+    object dtLimite: TDateTimePicker
+      Left = 288
+      Height = 29
+      Top = 54
+      Width = 101
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      TabOrder = 1
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 44252
+      Time = 0.469097465276718
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+    end
+    object edLimiteMinimo: TFloatSpinEdit
+      Left = 288
+      Height = 29
+      Top = 21
+      Width = 100
+      Alignment = taRightJustify
+      MaxValue = 999999
+      MinValue = 100
+      TabOrder = 0
+      Value = 100
+    end
+    object pb: TProgressBar
+      Left = 5
+      Height = 20
+      Top = 277
+      Width = 587
+      Align = alBottom
+      BorderSpacing.Around = 5
+      TabOrder = 2
+      BarShowText = True
+    end
+    object mmLog: TMemo
+      Left = 5
+      Height = 144
+      Top = 128
+      Width = 587
+      Align = alBottom
+      BorderSpacing.Around = 5
+      ReadOnly = True
+      ScrollBars = ssAutoBoth
+      TabOrder = 3
+    end
+    object Label3: TLabel
+      Left = 72
+      Height = 21
+      Top = 90
+      Width = 210
+      Caption = 'Data Inicio Recomp Saldos RNP'
+    end
+    object edSldRnp: TEdit
+      Left = 288
+      Height = 29
+      Top = 88
+      Width = 101
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 4
+    end
+  end
+  object AL: TActionList
+    Images = DM.IL18
+    Left = 32
+    Top = 16
+    object Executar: TAction
+      Category = 'Manutencao'
+      Caption = 'Executar'
+      Hint = 'Clique (ou F2) para iniciar'
+      ImageIndex = 2
+      OnExecute = ExecutarExecute
+    end
+    object Sair: TAction
+      Category = 'Manutencao'
+      Caption = '&Sair'
+      Hint = 'Clique para finalizar'
+      ImageIndex = 5
+      OnExecute = SairExecute
+    end
+    object rnp: TAction
+      Category = 'Manutencao'
+      Caption = 'Rnp'
+      Hint = 'Relatório Rnp Siacon  até a data'
+      ImageIndex = 0
+      OnExecute = rnpExecute
+    end
+    object resumo: TAction
+      Caption = 'Resumo'
+      Hint = 'Resumo Calculo BC'
+      ImageIndex = 0
+      OnExecute = resumoExecute
+    end
+  end
+end

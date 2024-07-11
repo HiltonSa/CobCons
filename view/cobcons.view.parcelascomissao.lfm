@@ -1,0 +1,359 @@
+object FrmParcelasComissao: TFrmParcelasComissao
+  Left = 308
+  Height = 550
+  Top = 82
+  Width = 811
+  BorderStyle = bsNone
+  BorderWidth = 5
+  Caption = 'Parcelas de Comissão'
+  ClientHeight = 550
+  ClientWidth = 811
+  Font.Color = clWhite
+  Font.Height = -16
+  Font.Name = 'Segoe UI Light'
+  KeyPreview = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  Position = poMainFormCenter
+  ShowHint = True
+  LCLVersion = '2.2.6.0'
+  object pnAcoes: TPanel
+    Left = 10
+    Height = 459
+    Top = 81
+    Width = 136
+    Align = alLeft
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 459
+    ClientWidth = 136
+    TabOrder = 0
+    object SpeedButton1: TSpeedButton
+      Left = 2
+      Height = 47
+      Top = 2
+      Width = 132
+      Action = alterar
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Margin = 2
+    end
+    object SpeedButton2: TSpeedButton
+      Left = 2
+      Height = 47
+      Top = 51
+      Width = 132
+      Action = sair
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Margin = 2
+    end
+  end
+  object pnBackGround: TPanel
+    Left = 151
+    Height = 459
+    Top = 81
+    Width = 650
+    Align = alClient
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 459
+    ClientWidth = 650
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    ParentFont = False
+    TabOrder = 1
+    object Panel3: TPanel
+      Left = 0
+      Height = 184
+      Top = 0
+      Width = 650
+      Align = alTop
+      BevelOuter = bvNone
+      ClientHeight = 184
+      ClientWidth = 650
+      TabOrder = 0
+      object edEmp: TEdit
+        Left = 230
+        Height = 29
+        Top = 10
+        Width = 275
+        Color = clBtnFace
+        ReadOnly = True
+        TabStop = False
+        TabOrder = 0
+      end
+      object edContrato: TEdit
+        Left = 275
+        Height = 29
+        Top = 43
+        Width = 88
+        Color = clBtnFace
+        ReadOnly = True
+        TabStop = False
+        TabOrder = 1
+      end
+      object edCod: TEdit
+        Left = 105
+        Height = 29
+        Top = 10
+        Width = 56
+        Color = clBtnFace
+        ReadOnly = True
+        TabStop = False
+        TabOrder = 2
+      end
+      object edDtVen: TEdit
+        Left = 105
+        Height = 29
+        Top = 43
+        Width = 88
+        Color = clBtnFace
+        ReadOnly = True
+        TabStop = False
+        TabOrder = 3
+      end
+      object edNmVen: TEdit
+        Left = 105
+        Height = 29
+        Top = 75
+        Width = 400
+        Color = clBtnFace
+        ReadOnly = True
+        TabStop = False
+        TabOrder = 4
+      end
+      object edDcBem: TEdit
+        Left = 105
+        Height = 29
+        Top = 107
+        Width = 208
+        Color = clBtnFace
+        ReadOnly = True
+        TabStop = False
+        TabOrder = 5
+      end
+      object edVlBem: TEdit
+        Left = 385
+        Height = 29
+        Top = 107
+        Width = 120
+        Alignment = taRightJustify
+        Color = clBtnFace
+        ReadOnly = True
+        TabStop = False
+        TabOrder = 6
+      end
+      object edNmCli: TEdit
+        Left = 105
+        Height = 29
+        Top = 139
+        Width = 400
+        Color = clBtnFace
+        ReadOnly = True
+        TabStop = False
+        TabOrder = 7
+      end
+      object Label1: TLabel
+        Left = 45
+        Height = 21
+        Top = 13
+        Width = 49
+        Caption = 'Código'
+        ParentColor = False
+      end
+      object Label2: TLabel
+        Left = 168
+        Height = 21
+        Top = 13
+        Width = 57
+        Caption = 'Empresa'
+        ParentColor = False
+      end
+      object Label3: TLabel
+        Left = 208
+        Height = 21
+        Top = 46
+        Width = 60
+        Caption = 'Contrato'
+        ParentColor = False
+      end
+      object Label4: TLabel
+        Left = 16
+        Height = 21
+        Top = 46
+        Width = 78
+        Caption = 'Data Venda'
+        ParentColor = False
+      end
+      object Label5: TLabel
+        Left = 29
+        Height = 21
+        Top = 77
+        Width = 65
+        Caption = 'Vendedor'
+        ParentColor = False
+      end
+      object Label6: TLabel
+        Left = 64
+        Height = 21
+        Top = 109
+        Width = 30
+        Caption = 'Bem'
+        ParentColor = False
+      end
+      object Label7: TLabel
+        Left = 344
+        Height = 21
+        Top = 109
+        Width = 33
+        Caption = 'Valor'
+        ParentColor = False
+      end
+      object Label8: TLabel
+        Left = 48
+        Height = 21
+        Top = 143
+        Width = 46
+        Caption = 'Cliente'
+        ParentColor = False
+      end
+      object edSit: TEdit
+        Left = 393
+        Height = 29
+        Top = 43
+        Width = 112
+        Alignment = taCenter
+        Color = clBtnFace
+        ReadOnly = True
+        TabStop = False
+        TabOrder = 8
+      end
+      object Label9: TLabel
+        Left = 373
+        Height = 21
+        Top = 46
+        Width = 16
+        Caption = 'Sit'
+        ParentColor = False
+      end
+    end
+    object grPesq: TDBGrid
+      Left = 0
+      Height = 275
+      Top = 184
+      Width = 650
+      Align = alClient
+      AutoFillColumns = True
+      BorderStyle = bsNone
+      Color = clWhite
+      Columns = <      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Parcela'
+          Width = 92
+          FieldName = 'PARCELA'
+          DisplayFormat = '00'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Dt.Vencto'
+          Width = 92
+          FieldName = 'dtvenc'
+        end      
+        item
+          Alignment = taRightJustify
+          Title.Alignment = taCenter
+          Title.Caption = 'Receber'
+          Width = 92
+          FieldName = 'Receber'
+        end      
+        item
+          Alignment = taRightJustify
+          Title.Alignment = taCenter
+          Title.Caption = 'Recebido'
+          Width = 92
+          FieldName = 'Recebido'
+        end      
+        item
+          Alignment = taRightJustify
+          Title.Alignment = taCenter
+          Title.Caption = 'Pagar'
+          Width = 92
+          FieldName = 'Pagar'
+        end      
+        item
+          Alignment = taRightJustify
+          Title.Alignment = taCenter
+          Title.Caption = 'Pago'
+          Width = 92
+          FieldName = 'Pago'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Dt.Rec.'
+          Width = 98
+          FieldName = 'dtrec'
+        end>
+      DataSource = ds
+      DefaultRowHeight = 29
+      FixedColor = clWhite
+      FixedCols = 0
+      Options = [dgTitles, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+      ReadOnly = True
+      Scrollbars = ssAutoBoth
+      TabOrder = 1
+      TitleFont.Color = clBlack
+      TitleFont.Height = -16
+      TitleFont.Name = 'Segoe UI Light'
+      OnDblClick = grPesqDblClick
+    end
+  end
+  object pnTitulo: TPanel
+    Left = 10
+    Height = 66
+    Top = 10
+    Width = 791
+    Align = alTop
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    Caption = 'Parcelas de Comissão'
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -28
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 2
+    OnMouseMove = pnTituloMouseMove
+  end
+  object AL: TActionList
+    Images = DM.IL18
+    Left = 40
+    Top = 280
+    object alterar: TAction
+      Caption = 'Alterar'
+      Hint = 'Alterar Parcela'
+      ImageIndex = 13
+      OnExecute = alterarExecute
+      ShortCut = 113
+    end
+    object sair: TAction
+      Caption = 'Fechar'
+      ImageIndex = 5
+      OnExecute = sairExecute
+    end
+  end
+  object ds: TDataSource
+    Left = 40
+    Top = 232
+  end
+end

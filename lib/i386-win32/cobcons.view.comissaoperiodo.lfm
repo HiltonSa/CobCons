@@ -1,0 +1,207 @@
+object FrmComissaoPeriodo: TFrmComissaoPeriodo
+  Left = 745
+  Height = 311
+  Top = 188
+  Width = 526
+  BorderStyle = bsNone
+  BorderWidth = 5
+  Caption = 'Comissões no Período'
+  ClientHeight = 311
+  ClientWidth = 526
+  Font.Color = clWhite
+  Font.Height = -16
+  Font.Name = 'Segoe UI Light'
+  KeyPreview = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  Position = poMainFormCenter
+  ShowHint = True
+  LCLVersion = '2.2.6.0'
+  object pnTitulo: TPanel
+    Left = 10
+    Height = 66
+    Top = 10
+    Width = 506
+    Align = alTop
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    Caption = 'Comissões no Período'
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -28
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+    OnMouseMove = pnTituloMouseMove
+  end
+  object pnAcoes: TPanel
+    Left = 10
+    Height = 220
+    Top = 81
+    Width = 136
+    Align = alLeft
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 220
+    ClientWidth = 136
+    Color = clMoneyGreen
+    ParentColor = False
+    TabOrder = 1
+    object SpeedButton5: TSpeedButton
+      Left = 0
+      Height = 47
+      Top = 47
+      Width = 136
+      Action = sair
+      Align = alTop
+      Flat = True
+      Images = DM.IL18
+      ImageIndex = 5
+      Margin = 2
+    end
+    object SpeedButton8: TSpeedButton
+      Left = 0
+      Height = 47
+      Top = 0
+      Width = 136
+      Action = imp
+      Align = alTop
+      Flat = True
+      Images = DM.IL18
+      ImageIndex = 37
+      Margin = 2
+    end
+  end
+  object pnBackground: TPanel
+    Left = 151
+    Height = 220
+    Top = 81
+    Width = 365
+    Align = alClient
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 220
+    ClientWidth = 365
+    Color = clSkyBlue
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 2
+    object Label6: TLabel
+      Left = 72
+      Height = 21
+      Top = 50
+      Width = 51
+      Caption = 'Período'
+      ParentColor = False
+    end
+    object Label7: TLabel
+      Left = 88
+      Height = 21
+      Top = 85
+      Width = 35
+      Caption = 'Início'
+      ParentColor = False
+    end
+    object Label8: TLabel
+      Left = 100
+      Height = 21
+      Top = 119
+      Width = 23
+      Caption = 'Fim'
+      ParentColor = False
+    end
+    object Label9: TLabel
+      Left = 74
+      Height = 21
+      Top = 153
+      Width = 49
+      Caption = 'Cálculo'
+      ParentColor = False
+    end
+    object cboPer: THNSCombox
+      Left = 128
+      Height = 29
+      Top = 47
+      Width = 172
+      AutoComplete = True
+      AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
+      ItemHeight = 21
+      OnSelect = cboPerSelect
+      TabOrder = 1
+    end
+    object edDtIni: TEdit
+      Left = 129
+      Height = 29
+      Top = 81
+      Width = 103
+      Alignment = taCenter
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 2
+    end
+    object edDtFim: TEdit
+      Left = 129
+      Height = 29
+      Top = 116
+      Width = 103
+      Alignment = taCenter
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 3
+    end
+    object edDtCal: TEdit
+      Left = 129
+      Height = 29
+      Top = 150
+      Width = 103
+      Alignment = taCenter
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 4
+    end
+    object Label5: TLabel
+      Left = 92
+      Height = 21
+      Top = 15
+      Width = 27
+      Caption = 'Filial'
+      ParentColor = False
+    end
+    object cboFil: THNSCombox
+      Left = 129
+      Height = 29
+      Top = 11
+      Width = 172
+      AutoComplete = True
+      AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
+      ItemHeight = 21
+      OnExit = cboFilExit
+      OnSelect = cboFilSelect
+      TabOrder = 0
+      TextHint = 'Todas'
+    end
+  end
+  object AL: TActionList
+    Images = DM.IL18
+    Left = 192
+    Top = 16
+    object sair: TAction
+      Caption = 'Sair'
+      ImageIndex = 5
+      OnExecute = sairExecute
+    end
+    object imp: TAction
+      Caption = 'Imprimir'
+      Enabled = False
+      Hint = 'Imprime relatório da baixa'
+      ImageIndex = 37
+      OnExecute = impExecute
+    end
+  end
+end

@@ -1,0 +1,422 @@
+object FrmRelBaixaComissao: TFrmRelBaixaComissao
+  Left = 345
+  Height = 360
+  Top = 127
+  Width = 786
+  Caption = 'FrmRelBaixaComissao'
+  ClientHeight = 360
+  ClientWidth = 786
+  LCLVersion = '2.2.6.0'
+  object RP: TRLReport
+    Left = 0
+    Height = 1123
+    Top = 0
+    Width = 794
+    DataSource = FrmRecAutomatico.ds
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Arial'
+    Margins.LeftMargin = 5
+    Margins.TopMargin = 5
+    Margins.RightMargin = 5
+    Margins.BottomMargin = 5
+    PreviewOptions.ShowModal = True
+    Title = 'BAIXA AUTOMÁTICA'
+    JobTitle = 'Baixa Comissao Automatica'
+    object grPar: TRLGroup
+      Left = 19
+      Height = 64
+      Top = 52
+      Width = 756
+      DataFields = 'Pcl'
+      object grCab: TRLBand
+        Left = 0
+        Height = 32
+        Top = 0
+        Width = 756
+        BandType = btColumnHeader
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = False
+        Borders.DrawRight = False
+        Borders.DrawBottom = True
+        Color = 13948116
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        Transparent = False
+        object RLDBText2: TRLDBText
+          Left = 0
+          Height = 14
+          Top = 0
+          Width = 76
+          Align = faLeftTop
+          DataField = 'Pcl'
+          DataSource = FrmRecAutomatico.ds
+          Text = 'PARCELA: '
+          Transparent = False
+        end
+        object RLLabel1: TRLLabel
+          Left = 0
+          Height = 14
+          Top = 16
+          Width = 48
+          Caption = 'CTRATO'
+          Holder = RLDBText1
+          Transparent = False
+        end
+        object RLLabel2: TRLLabel
+          Left = 59
+          Height = 14
+          Top = 16
+          Width = 40
+          Caption = 'GRUPO'
+          Holder = RLDBText3
+          Transparent = False
+        end
+        object RLLabel3: TRLLabel
+          Left = 105
+          Height = 14
+          Top = 16
+          Width = 26
+          Caption = 'CTA'
+          Holder = RLDBText4
+          Transparent = False
+        end
+        object RLLabel4: TRLLabel
+          Left = 137
+          Height = 14
+          Top = 16
+          Width = 34
+          Caption = 'NOME'
+          Holder = RLDBText5
+          Transparent = False
+        end
+        object RLLabel5: TRLLabel
+          Left = 488
+          Height = 14
+          Top = 16
+          Width = 41
+          Caption = 'PAGTO'
+          Holder = RLDBText6
+          Transparent = False
+        end
+        object RLLabel6: TRLLabel
+          Left = 559
+          Height = 14
+          Top = 16
+          Width = 41
+          Alignment = taRightJustify
+          Caption = 'VALOR'
+          Holder = RLDBText7
+          Transparent = False
+        end
+        object RLLabel7: TRLLabel
+          Left = 333
+          Height = 14
+          Top = 16
+          Width = 26
+          Caption = 'BEM'
+          Holder = RLDBText9
+          Transparent = False
+        end
+      end
+      object det: TRLBand
+        Left = 0
+        Height = 16
+        Top = 32
+        Width = 756
+        GreenBarPrint = True
+        object RLDBText1: TRLDBText
+          Left = 0
+          Height = 14
+          Top = 1
+          Width = 56
+          AutoSize = False
+          DataField = 'Contrato'
+          DataSource = ds
+        end
+        object RLDBText3: TRLDBText
+          Left = 59
+          Height = 14
+          Top = 1
+          Width = 43
+          AutoSize = False
+          DataField = 'Grupo'
+          DataSource = ds
+        end
+        object RLDBText4: TRLDBText
+          Left = 105
+          Height = 14
+          Top = 1
+          Width = 27
+          AutoSize = False
+          DataField = 'Cota'
+          DataSource = ds
+        end
+        object RLDBText5: TRLDBText
+          Left = 137
+          Height = 14
+          Top = 1
+          Width = 192
+          AutoSize = False
+          DataField = 'Nome'
+          DataSource = ds
+        end
+        object RLDBText6: TRLDBText
+          Left = 488
+          Height = 14
+          Top = 1
+          Width = 56
+          Alignment = taCenter
+          AutoSize = False
+          DataField = 'DtPag'
+          DataSource = ds
+        end
+        object RLDBText7: TRLDBText
+          Left = 548
+          Height = 14
+          Top = 1
+          Width = 52
+          Alignment = taRightJustify
+          AutoSize = False
+          DataField = 'Comissao'
+          DataSource = ds
+        end
+        object RLDBText8: TRLDBText
+          Left = 600
+          Height = 14
+          Top = 1
+          Width = 21
+          DataField = 'obs'
+          DataSource = ds
+        end
+        object RLDBText9: TRLDBText
+          Left = 333
+          Height = 14
+          Top = 1
+          Width = 152
+          AutoSize = False
+          DataField = 'Bem'
+          DataSource = ds
+        end
+      end
+      object grRod: TRLBand
+        Left = 0
+        Height = 16
+        Top = 48
+        Width = 756
+        BandType = btFooter
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = False
+        Borders.DrawRight = False
+        Borders.DrawBottom = False
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+        object RLDBResult1: TRLDBResult
+          Left = 505
+          Height = 16
+          Top = 0
+          Width = 95
+          Alignment = taRightJustify
+          Borders.Sides = sdCustom
+          Borders.DrawLeft = False
+          Borders.DrawTop = True
+          Borders.DrawRight = False
+          Borders.DrawBottom = False
+          DataField = 'Comissao'
+          DataSource = ds
+          DisplayMask = ',#0.00'
+          Holder = RLDBText7
+          Info = riSum
+        end
+        object RLDBResult2: TRLDBResult
+          Left = 0
+          Height = 16
+          Top = 0
+          Width = 155
+          Borders.Sides = sdCustom
+          Borders.DrawLeft = False
+          Borders.DrawTop = True
+          Borders.DrawRight = False
+          Borders.DrawBottom = False
+          DataField = 'Contrato'
+          DataSource = ds
+          DisplayMask = '0000'
+          Info = riCount
+          Text = 'QTDE DE PARCELAS: '
+        end
+      end
+    end
+    object tot: TRLBand
+      Left = 19
+      Height = 16
+      Top = 116
+      Width = 756
+      BandType = btSummary
+      Borders.Sides = sdCustom
+      Borders.DrawLeft = False
+      Borders.DrawTop = False
+      Borders.DrawRight = False
+      Borders.DrawBottom = False
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+      object RLDBResult3: TRLDBResult
+        Left = 505
+        Height = 16
+        Top = 0
+        Width = 95
+        Alignment = taRightJustify
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = True
+        Borders.DrawRight = False
+        Borders.DrawBottom = False
+        DataField = 'Comissao'
+        DataSource = ds
+        DisplayMask = ',#0.00'
+        Holder = RLDBText7
+        Info = riSum
+      end
+      object RLDBResult4: TRLDBResult
+        Left = 0
+        Height = 16
+        Top = 0
+        Width = 155
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = True
+        Borders.DrawRight = False
+        Borders.DrawBottom = False
+        DataField = 'Contrato'
+        DataSource = ds
+        DisplayMask = ',#0.00'
+        Info = riCount
+        Text = 'QTDE DE PARCELAS: '
+      end
+    end
+    object CabRel: TRLBand
+      Left = 19
+      Height = 33
+      Top = 19
+      Width = 756
+      BandType = btHeader
+      Borders.Sides = sdCustom
+      Borders.DrawLeft = False
+      Borders.DrawTop = False
+      Borders.DrawRight = False
+      Borders.DrawBottom = True
+      Color = 13948116
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      object RLDBText10: TRLDBText
+        Left = 0
+        Height = 16
+        Top = 0
+        Width = 56
+        Align = faLeftTop
+        DataField = 'NM_REL'
+        DataSource = dsPrs
+        Transparent = False
+      end
+      object RLSystemInfo4: TRLSystemInfo
+        Left = 715
+        Height = 16
+        Top = 0
+        Width = 41
+        Align = faRightTop
+        Alignment = taRightJustify
+        Transparent = False
+      end
+      object RLSystemInfo5: TRLSystemInfo
+        Left = 358
+        Height = 16
+        Top = 16
+        Width = 40
+        Align = faCenterBottom
+        Alignment = taCenter
+        Info = itTitle
+        Transparent = False
+      end
+    end
+    object BndRod: TRLBand
+      Left = 19
+      Height = 16
+      Top = 148
+      Width = 756
+      BandType = btFooter
+      Color = 13948116
+      ParentColor = False
+      Transparent = False
+      object RLSystemInfo8: TRLSystemInfo
+        Left = 100
+        Height = 14
+        Top = 0
+        Width = 99
+        Align = faLeftOnly
+        Info = itLastPageNumber
+        Text = '/ '
+        Transparent = False
+      end
+      object RLSystemInfo9: TRLSystemInfo
+        Left = 0
+        Height = 16
+        Top = 0
+        Width = 100
+        Align = faLeftMost
+        Info = itPageNumber
+        Text = 'PAG: '
+        Transparent = False
+      end
+    end
+    object BndSum2: TRLBand
+      Left = 19
+      Height = 16
+      Top = 132
+      Width = 756
+      BandType = btSummary
+      Color = 13948116
+      ParentColor = False
+      Transparent = False
+      object RLSystemInfo7: TRLSystemInfo
+        Left = 0
+        Height = 14
+        Top = 0
+        Width = 756
+        Align = faWidth
+        Alignment = taRightJustify
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = [fsItalic]
+        Info = itNow
+        ParentFont = False
+        Text = 'Impresso em '
+        Transparent = False
+      end
+    end
+  end
+  object ds: TDataSource
+    Left = 380
+    Top = 204
+  end
+  object dsPrs: TDataSource
+    Left = 428
+    Top = 204
+  end
+end

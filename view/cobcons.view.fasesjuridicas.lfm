@@ -1,0 +1,323 @@
+object frmJur: TfrmJur
+  Left = 559
+  Height = 464
+  Top = 92
+  Width = 531
+  BorderIcons = [biSystemMenu, biMaximize]
+  BorderStyle = bsNone
+  BorderWidth = 5
+  Caption = 'Fases Jurídicas'
+  ClientHeight = 464
+  ClientWidth = 531
+  Color = clBtnFace
+  Font.Color = clWhite
+  Font.Height = -16
+  Font.Name = 'Segoe UI Light'
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  Position = poDefaultPosOnly
+  ShowHint = True
+  LCLVersion = '2.2.0.4'
+  object pnBack: TPanel
+    Left = 10
+    Height = 361
+    Top = 93
+    Width = 511
+    Align = alClient
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 361
+    ClientWidth = 511
+    Color = clBtnFace
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+    object grJur: TDBGrid
+      Left = 5
+      Height = 185
+      Top = 136
+      Width = 501
+      Align = alBottom
+      BorderSpacing.Around = 5
+      BorderStyle = bsNone
+      Color = clWhite
+      Columns = <      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Inicio'
+          Width = 75
+          FieldName = 'D_INICIO'
+        end      
+        item
+          Title.Caption = 'Fase'
+          Width = 150
+          FieldName = 'dcfase'
+        end      
+        item
+          Title.Caption = 'Representante'
+          Width = 180
+          FieldName = 'NmRepres'
+        end      
+        item
+          Alignment = taRightJustify
+          Title.Alignment = taRightJustify
+          Title.Caption = 'Custo'
+          Width = 75
+          FieldName = 'CUST_MOE'
+          DisplayFormat = ',#0.00'
+        end>
+      DataSource = dsJur
+      DefaultRowHeight = 29
+      FixedColor = clWhite
+      FixedCols = 0
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Segoe UI Light'
+      Options = [dgTitles, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+      ParentFont = False
+      ReadOnly = True
+      Scrollbars = ssAutoBoth
+      TabOrder = 1
+      TitleFont.Color = clBlack
+      TitleFont.Height = -16
+      TitleFont.Name = 'Segoe UI Light'
+    end
+    object nvJur: TDBNavigator
+      Left = 5
+      Height = 30
+      Top = 326
+      Width = 501
+      Align = alBottom
+      BevelOuter = bvNone
+      BorderSpacing.Around = 5
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 30
+      ClientWidth = 501
+      DataSource = dsJur
+      Flat = True
+      Hints.Strings = (
+        'Primeiro'
+        'Anterior'
+        'Próximo'
+        'Último'
+        'Insert record'
+        'Delete record'
+        'Edit record'
+        'Post edit'
+        'Cancel edit'
+        'Refresh data'
+      )
+      Options = []
+      TabOrder = 2
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+    end
+    object Label55: TLabel
+      Left = 217
+      Height = 21
+      Top = 3
+      Width = 28
+      Caption = 'Fase'
+    end
+    object Label56: TLabel
+      Left = 66
+      Height = 21
+      Top = 3
+      Width = 35
+      Caption = 'Início'
+    end
+    object Label57: TLabel
+      Left = 4
+      Height = 21
+      Top = 36
+      Width = 97
+      Caption = 'Representante'
+    end
+    object Label58: TLabel
+      Left = 62
+      Height = 21
+      Top = 67
+      Width = 39
+      Caption = 'Custo'
+    end
+    object Label59: TLabel
+      Left = 21
+      Height = 21
+      Top = 99
+      Width = 80
+      Caption = 'Observação'
+    end
+    object DBEdit2: TDBEdit
+      Left = 250
+      Height = 29
+      Top = 0
+      Width = 214
+      DataField = 'DCFASE'
+      DataSource = dsJur
+      ReadOnly = True
+      MaxLength = 0
+      ParentColor = True
+      TabOrder = 3
+      TabStop = False
+    end
+    object DBEdit3: TDBEdit
+      Left = 105
+      Height = 29
+      Top = 32
+      Width = 359
+      DataField = 'NMREPRES'
+      DataSource = dsJur
+      ReadOnly = True
+      MaxLength = 0
+      ParentColor = True
+      TabOrder = 4
+      TabStop = False
+    end
+    object DBEdit4: TDBEdit
+      Left = 105
+      Height = 29
+      Top = 64
+      Width = 103
+      DataField = 'CUST_MOE'
+      DataSource = dsJur
+      ReadOnly = True
+      MaxLength = 0
+      ParentColor = True
+      TabOrder = 6
+      TabStop = False
+    end
+    object DBEdit5: TDBEdit
+      Left = 105
+      Height = 29
+      Top = 96
+      Width = 359
+      DataField = 'OBSERV'
+      DataSource = dsJur
+      ReadOnly = True
+      MaxLength = 0
+      ParentColor = True
+      TabOrder = 5
+      TabStop = False
+    end
+    object DBEdit9: TDBEdit
+      Left = 105
+      Height = 29
+      Top = 0
+      Width = 103
+      DataField = 'D_INICIO'
+      DataSource = dsJur
+      ReadOnly = True
+      MaxLength = 0
+      ParentColor = True
+      TabOrder = 0
+      TabStop = False
+    end
+  end
+  object pnTitulo: TPanel
+    Left = 10
+    Height = 78
+    Top = 10
+    Width = 511
+    Align = alTop
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 78
+    ClientWidth = 511
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 1
+    OnMouseMove = pnTituloMouseMove
+    object DBEdit1: TDBEdit
+      Left = 105
+      Height = 29
+      Top = 8
+      Width = 64
+      DataField = 'GRUPO'
+      DataSource = dsJur
+      ReadOnly = True
+      MaxLength = 0
+      ParentColor = True
+      TabOrder = 0
+      TabStop = False
+    end
+    object DBEdit6: TDBEdit
+      Left = 250
+      Height = 29
+      Top = 8
+      Width = 32
+      DataField = 'SEQ'
+      DataSource = dsJur
+      ReadOnly = True
+      MaxLength = 0
+      ParentColor = True
+      TabOrder = 1
+      TabStop = False
+    end
+    object DBEdit7: TDBEdit
+      Left = 282
+      Height = 29
+      Top = 8
+      Width = 56
+      DataField = 'COTA'
+      DataSource = dsJur
+      ReadOnly = True
+      MaxLength = 0
+      ParentColor = True
+      TabOrder = 2
+      TabStop = False
+    end
+    object DBEdit8: TDBEdit
+      Left = 105
+      Height = 29
+      Top = 40
+      Width = 359
+      DataField = 'NOME'
+      DataSource = dsJur
+      ReadOnly = True
+      MaxLength = 0
+      ParentColor = True
+      TabOrder = 3
+      TabStop = False
+    end
+    object Label1: TLabel
+      Left = 53
+      Height = 21
+      Top = 11
+      Width = 48
+      Caption = 'Grupo'
+    end
+    object Label2: TLabel
+      Left = 56
+      Height = 21
+      Top = 43
+      Width = 45
+      Caption = 'Nome'
+    end
+    object Label3: TLabel
+      Left = 209
+      Height = 21
+      Top = 11
+      Width = 36
+      Caption = 'Cota'
+    end
+  end
+  object dsJur: TDataSource
+    AutoEdit = False
+    Left = 8
+    Top = 24
+  end
+end

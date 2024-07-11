@@ -1,0 +1,353 @@
+object FrmVerComissaoPermanencia: TFrmVerComissaoPermanencia
+  Left = 180
+  Height = 504
+  Top = 157
+  Width = 1013
+  BorderStyle = bsNone
+  BorderWidth = 5
+  Caption = 'Ver Comissao Permanencia'
+  ClientHeight = 504
+  ClientWidth = 1013
+  Font.Color = clWhite
+  Font.Height = -16
+  Font.Name = 'Segoe UI Light'
+  KeyPreview = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  Position = poMainFormCenter
+  ShowHint = True
+  LCLVersion = '2.2.0.4'
+  object pnTitulo: TPanel
+    Left = 10
+    Height = 66
+    Top = 10
+    Width = 993
+    Align = alTop
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    Caption = 'Comissão de Permanência'
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -28
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+    OnMouseMove = pnTituloMouseMove
+  end
+  object pnAcoes: TPanel
+    Left = 10
+    Height = 413
+    Top = 81
+    Width = 136
+    Align = alLeft
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 413
+    ClientWidth = 136
+    Color = clGray
+    ParentColor = False
+    TabOrder = 1
+    object btnSair: TSpeedButton
+      Left = 2
+      Height = 47
+      Top = 51
+      Width = 132
+      Action = Sair
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Margin = 2
+    end
+    object btnPesq: TSpeedButton
+      Left = 2
+      Height = 47
+      Top = 2
+      Width = 132
+      Action = imprimir
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Margin = 2
+    end
+  end
+  object pnBackGround: TPanel
+    Left = 151
+    Height = 413
+    Top = 81
+    Width = 852
+    Align = alClient
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 413
+    ClientWidth = 852
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    ParentFont = False
+    TabOrder = 2
+    object Panel2: TPanel
+      Left = 0
+      Height = 120
+      Top = 0
+      Width = 852
+      Align = alTop
+      BevelOuter = bvNone
+      ClientHeight = 120
+      ClientWidth = 852
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Segoe UI Light'
+      ParentFont = False
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 32
+        Height = 21
+        Top = 55
+        Width = 85
+        Caption = 'Data Cálculo'
+      end
+      object Label2: TLabel
+        Left = 279
+        Height = 21
+        Top = 56
+        Width = 49
+        Caption = 'Agente'
+      end
+      object Label4: TLabel
+        Left = 608
+        Height = 21
+        Top = 23
+        Width = 78
+        Caption = 'Saldo Inicial'
+      end
+      object Label5: TLabel
+        Left = 622
+        Height = 21
+        Top = 55
+        Width = 64
+        Caption = 'Comissão'
+      end
+      object Label6: TLabel
+        Left = 615
+        Height = 21
+        Top = 89
+        Width = 71
+        Caption = 'Saldo Final'
+      end
+      object DBEdit2: TDBEdit
+        Left = 126
+        Height = 29
+        Top = 52
+        Width = 106
+        DataField = 'dtexe'
+        DataSource = dsCp
+        ReadOnly = True
+        MaxLength = 0
+        ParentColor = True
+        TabOrder = 7
+        TabStop = False
+      end
+      object DBEdit3: TDBEdit
+        Left = 696
+        Height = 29
+        Top = 18
+        Width = 130
+        DataField = 'sdinicial'
+        DataSource = dsCp
+        ReadOnly = True
+        MaxLength = 0
+        ParentColor = True
+        TabOrder = 2
+        TabStop = False
+      end
+      object DBEdit4: TDBEdit
+        Left = 696
+        Height = 29
+        Top = 52
+        Width = 130
+        DataField = 'comissao'
+        DataSource = dsCp
+        ReadOnly = True
+        MaxLength = 0
+        ParentColor = True
+        TabOrder = 1
+        TabStop = False
+      end
+      object DBEdit5: TDBEdit
+        Left = 696
+        Height = 29
+        Top = 84
+        Width = 130
+        DataField = 'sdfinal'
+        DataSource = dsCp
+        ReadOnly = True
+        MaxLength = 0
+        ParentColor = True
+        TabOrder = 0
+        TabStop = False
+      end
+      object Label7: TLabel
+        Left = 248
+        Height = 21
+        Top = 23
+        Width = 80
+        Caption = 'Dt. Contabil'
+      end
+      object DBEdit6: TDBEdit
+        Left = 338
+        Height = 29
+        Top = 18
+        Width = 106
+        DataField = 'dtcontab'
+        DataSource = dsCp
+        ReadOnly = True
+        MaxLength = 0
+        ParentColor = True
+        TabOrder = 4
+        TabStop = False
+      end
+      object DBEdit7: TDBEdit
+        Left = 338
+        Height = 29
+        Top = 84
+        Width = 106
+        DataField = 'documento'
+        DataSource = dsCp
+        ReadOnly = True
+        MaxLength = 0
+        ParentColor = True
+        TabOrder = 3
+        TabStop = False
+      end
+      object Label8: TLabel
+        Left = 248
+        Height = 21
+        Top = 89
+        Width = 80
+        Caption = 'Documento'
+      end
+      object DBEdit8: TDBEdit
+        Left = 338
+        Height = 29
+        Top = 52
+        Width = 210
+        DataField = 'nmage'
+        DataSource = dsCp
+        ReadOnly = True
+        MaxLength = 0
+        ParentColor = True
+        TabOrder = 5
+        TabStop = False
+      end
+      object Label3: TLabel
+        Left = 68
+        Height = 21
+        Top = 23
+        Width = 49
+        Caption = 'Código'
+      end
+      object DBEdit9: TDBEdit
+        Left = 127
+        Height = 29
+        Top = 18
+        Width = 106
+        DataField = 'CODIGO'
+        DataSource = dsCp
+        ReadOnly = True
+        MaxLength = 0
+        ParentColor = True
+        TabOrder = 6
+        TabStop = False
+      end
+    end
+    object Panel4: TPanel
+      Left = 0
+      Height = 293
+      Top = 120
+      Width = 852
+      Align = alClient
+      BevelOuter = bvNone
+      ClientHeight = 293
+      ClientWidth = 852
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Segoe UI Light'
+      ParentFont = False
+      TabOrder = 1
+      object grPesq: TDBGrid
+        Left = 5
+        Height = 242
+        Top = 5
+        Width = 842
+        Align = alClient
+        BorderSpacing.Around = 5
+        BorderStyle = bsNone
+        Color = clWhite
+        Columns = <>
+        DataSource = ds
+        DefaultRowHeight = 29
+        FixedColor = clWhite
+        FixedCols = 0
+        Options = [dgTitles, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+        ReadOnly = True
+        Scrollbars = ssAutoBoth
+        TabOrder = 0
+        TitleFont.Color = clBlack
+        TitleFont.Height = -16
+        TitleFont.Name = 'Segoe UI Light'
+        OnDblClick = grPesqDblClick
+      end
+      object nvPesq: TDBNavigator
+        Left = 5
+        Height = 36
+        Top = 252
+        Width = 842
+        Align = alBottom
+        BevelOuter = bvNone
+        BorderSpacing.Around = 5
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 36
+        ClientWidth = 842
+        DataSource = ds
+        Flat = True
+        Options = []
+        TabOrder = 1
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+      end
+    end
+  end
+  object AL: TActionList
+    Images = DM.IL18
+    Left = 56
+    Top = 24
+    object Sair: TAction
+      Category = 'Manutencao'
+      Caption = '&Sair'
+      Hint = 'Clique para finalizar'
+      ImageIndex = 5
+      OnExecute = SairExecute
+    end
+    object imprimir: TAction
+      Caption = 'Imprimir'
+      Hint = 'Imprimir a Comissão de Permanencia'
+      ImageIndex = 28
+      OnExecute = imprimirExecute
+    end
+  end
+  object ds: TDataSource
+    Left = 104
+    Top = 24
+  end
+  object dsCp: TDataSource
+    Left = 150
+    Top = 24
+  end
+end

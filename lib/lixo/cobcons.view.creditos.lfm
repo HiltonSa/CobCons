@@ -1,0 +1,447 @@
+object FrmCre: TFrmCre
+  Left = 467
+  Height = 531
+  Top = 78
+  Width = 616
+  BorderStyle = bsNone
+  BorderWidth = 5
+  Caption = 'Créditos da Cota'
+  ClientHeight = 531
+  ClientWidth = 616
+  Color = clBtnFace
+  Font.Color = clWhite
+  Font.Height = -16
+  Font.Name = 'Segoe UI Light'
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  LCLVersion = '2.2.0.4'
+  object pnBack: TPanel
+    Left = 10
+    Height = 428
+    Top = 93
+    Width = 596
+    Align = alClient
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 428
+    ClientWidth = 596
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    ParentFont = False
+    TabOrder = 0
+    object Label9: TLabel
+      Left = 76
+      Height = 21
+      Top = 12
+      Width = 49
+      Caption = 'Crédito'
+    end
+    object Label10: TLabel
+      Left = 224
+      Height = 21
+      Top = 12
+      Width = 103
+      Caption = 'Tipo de Crédito'
+    end
+    object Label11: TLabel
+      Left = 25
+      Height = 21
+      Top = 44
+      Width = 100
+      Caption = 'Início Correção'
+    end
+    object Label12: TLabel
+      Left = 39
+      Height = 21
+      Top = 79
+      Width = 86
+      Caption = 'Valor Crédito'
+    end
+    object Label13: TLabel
+      Left = 229
+      Height = 21
+      Top = 79
+      Width = 98
+      Caption = 'Valor Correção'
+    end
+    object Label14: TLabel
+      Left = 235
+      Height = 21
+      Top = 44
+      Width = 92
+      Caption = 'Lim. Correção'
+    end
+    object Label15: TLabel
+      Left = 30
+      Height = 21
+      Top = 180
+      Width = 95
+      Caption = 'Dt. Nota Fiscal'
+    end
+    object Label16: TLabel
+      Left = 256
+      Height = 21
+      Top = 180
+      Width = 71
+      Caption = 'Nota Fiscal'
+    end
+    object Label1: TLabel
+      Left = 49
+      Height = 21
+      Top = 147
+      Width = 76
+      Caption = 'Fornecedor'
+    end
+    object Label2: TLabel
+      Left = 231
+      Height = 21
+      Top = 111
+      Width = 96
+      Caption = 'Corr. Entregue'
+    end
+    object Label3: TLabel
+      Left = 27
+      Height = 21
+      Top = 111
+      Width = 98
+      Caption = 'Valor Entregue'
+    end
+    object Label4: TLabel
+      Left = 429
+      Height = 21
+      Top = 180
+      Width = 59
+      Caption = 'Dt Pagto'
+    end
+    object Label5: TLabel
+      Left = 45
+      Height = 21
+      Top = 213
+      Width = 80
+      Caption = 'Observação'
+    end
+    object grCre: TDBGrid
+      Left = 5
+      Height = 134
+      Top = 248
+      Width = 586
+      Align = alBottom
+      BorderSpacing.Around = 5
+      BorderStyle = bsNone
+      Color = clWhite
+      Columns = <      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Credito'
+          Width = 60
+          FieldName = 'CREDITO'
+        end      
+        item
+          Title.Caption = 'Tipo'
+          Width = 160
+          FieldName = 'DCTPCRE'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Pagto'
+          Width = 80
+          FieldName = 'DT_PAGTO'
+        end      
+        item
+          Alignment = taRightJustify
+          Title.Alignment = taRightJustify
+          Title.Caption = 'Vlr.Pago'
+          Width = 85
+          FieldName = 'VAL_ENTR'
+          DisplayFormat = ',#0.00'
+        end      
+        item
+          Alignment = taRightJustify
+          Title.Alignment = taRightJustify
+          Title.Caption = 'Corr.Paga'
+          Width = 85
+          FieldName = 'COR_ENTR'
+          DisplayFormat = ',#0.00'
+        end>
+      DataSource = dsCre
+      DefaultRowHeight = 29
+      FixedColor = clWhite
+      FixedCols = 0
+      Options = [dgTitles, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+      ReadOnly = True
+      Scrollbars = ssAutoBoth
+      TabOrder = 0
+      TitleFont.Color = clBlack
+      TitleFont.Height = -16
+      TitleFont.Name = 'Segoe UI Light'
+      OnCellClick = grCreCellClick
+    end
+    object nvCre: TDBNavigator
+      Left = 5
+      Height = 36
+      Top = 387
+      Width = 586
+      Align = alBottom
+      BevelOuter = bvNone
+      BorderSpacing.Around = 5
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 36
+      ClientWidth = 586
+      DataSource = dsCre
+      Flat = True
+      Hints.Strings = (
+        'Primeiro'
+        'Anterior'
+        'Próximo'
+        'Último'
+        'Insert record'
+        'Delete record'
+        'Edit record'
+        'Post edit'
+        'Cancel edit'
+        'Refresh data'
+      )
+      Options = []
+      TabOrder = 1
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+    end
+    object edCredito: TEdit
+      Left = 132
+      Height = 29
+      Top = 8
+      Width = 57
+      ParentColor = True
+      ReadOnly = True
+      TabOrder = 2
+    end
+    object edTpCred: TEdit
+      Left = 333
+      Height = 29
+      Top = 8
+      Width = 249
+      ParentColor = True
+      ReadOnly = True
+      TabOrder = 3
+    end
+    object edIniCorr: TEdit
+      Left = 132
+      Height = 29
+      Top = 42
+      Width = 90
+      ParentColor = True
+      ReadOnly = True
+      TabOrder = 4
+    end
+    object edLimCorr: TEdit
+      Left = 333
+      Height = 29
+      Top = 42
+      Width = 90
+      ParentColor = True
+      ReadOnly = True
+      TabOrder = 5
+    end
+    object edValCred: TEdit
+      Left = 132
+      Height = 29
+      Top = 76
+      Width = 90
+      Alignment = taRightJustify
+      ParentColor = True
+      ReadOnly = True
+      TabOrder = 6
+    end
+    object edValCorr: TEdit
+      Left = 333
+      Height = 29
+      Top = 76
+      Width = 90
+      Alignment = taRightJustify
+      ParentColor = True
+      ReadOnly = True
+      TabOrder = 7
+    end
+    object edNmForn: TEdit
+      Left = 132
+      Height = 29
+      Top = 143
+      Width = 450
+      ParentColor = True
+      ReadOnly = True
+      TabOrder = 8
+    end
+    object edDtNota: TEdit
+      Left = 132
+      Height = 29
+      Top = 177
+      Width = 90
+      ParentColor = True
+      ReadOnly = True
+      TabOrder = 9
+    end
+    object edNota: TEdit
+      Left = 333
+      Height = 29
+      Top = 177
+      Width = 90
+      ParentColor = True
+      ReadOnly = True
+      TabOrder = 10
+    end
+    object edDtPagto: TEdit
+      Left = 492
+      Height = 29
+      Top = 178
+      Width = 90
+      ParentColor = True
+      ReadOnly = True
+      TabOrder = 11
+    end
+    object edValEntr: TEdit
+      Left = 132
+      Height = 29
+      Top = 109
+      Width = 90
+      Alignment = taRightJustify
+      ParentColor = True
+      ReadOnly = True
+      TabOrder = 12
+    end
+    object edCorrEntr: TEdit
+      Left = 333
+      Height = 29
+      Top = 109
+      Width = 90
+      Alignment = taRightJustify
+      ParentColor = True
+      ReadOnly = True
+      TabOrder = 13
+    end
+    object edObser: TEdit
+      Left = 132
+      Height = 29
+      Top = 210
+      Width = 450
+      ParentColor = True
+      ReadOnly = True
+      TabOrder = 14
+    end
+  end
+  object pnTitulo: TPanel
+    Left = 10
+    Height = 78
+    Top = 10
+    Width = 596
+    Align = alTop
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 78
+    ClientWidth = 596
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 1
+    OnMouseMove = pnTituloMouseMove
+    object Label29: TLabel
+      Left = 42
+      Height = 21
+      Top = 8
+      Width = 33
+      Caption = 'Tipo'
+    end
+    object Label30: TLabel
+      Left = 224
+      Height = 21
+      Top = 8
+      Width = 36
+      Caption = 'Data'
+    end
+    object Label31: TLabel
+      Left = 16
+      Height = 21
+      Top = 38
+      Width = 59
+      Caption = 'Entrega'
+    end
+    object Label32: TLabel
+      Left = 380
+      Height = 21
+      Top = 38
+      Width = 95
+      Caption = 'Vlr Entregue'
+    end
+    object edDcTpConte: TEdit
+      Left = 79
+      Height = 29
+      Top = 4
+      Width = 137
+      ParentColor = True
+      ReadOnly = True
+      TabOrder = 0
+    end
+    object edDtConte: TEdit
+      Left = 264
+      Height = 29
+      Top = 4
+      Width = 102
+      ParentColor = True
+      ReadOnly = True
+      TabOrder = 1
+    end
+    object edDtEntre: TEdit
+      Left = 80
+      Height = 29
+      Top = 36
+      Width = 96
+      ParentColor = True
+      ReadOnly = True
+      TabOrder = 2
+    end
+    object edValEntre: TEdit
+      Left = 480
+      Height = 29
+      Top = 36
+      Width = 102
+      Alignment = taRightJustify
+      ParentColor = True
+      ReadOnly = True
+      TabOrder = 3
+    end
+    object Label33: TLabel
+      Left = 376
+      Height = 21
+      Top = 8
+      Width = 99
+      Caption = 'Vlr. Contemp'
+    end
+    object edValContemp: TEdit
+      Left = 480
+      Height = 29
+      Top = 4
+      Width = 102
+      Alignment = taRightJustify
+      ParentColor = True
+      ReadOnly = True
+      TabOrder = 4
+    end
+  end
+  object dsCre: TDataSource
+    AutoEdit = False
+    OnDataChange = dsCreDataChange
+    Left = 368
+    Top = 8
+  end
+end

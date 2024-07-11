@@ -1,0 +1,174 @@
+object frmReu: TfrmReu
+  Left = 135
+  Height = 524
+  Top = 83
+  Width = 241
+  BorderStyle = bsNone
+  BorderWidth = 5
+  Caption = 'Reuniões do Grupo'
+  ClientHeight = 524
+  ClientWidth = 241
+  Color = clBtnFace
+  Font.Color = clWhite
+  Font.Height = -16
+  Font.Name = 'Segoe UI Light'
+  KeyPreview = True
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  ShowHint = True
+  LCLVersion = '2.2.0.4'
+  object pnTitulo: TPanel
+    Left = 10
+    Height = 82
+    Top = 10
+    Width = 221
+    Align = alTop
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 82
+    ClientWidth = 221
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+    OnMouseMove = pnTituloMouseMove
+    object Label51: TLabel
+      Left = 8
+      Height = 21
+      Top = 32
+      Width = 48
+      Caption = 'Grupo'
+    end
+    object edGrupo: TEdit
+      Left = 62
+      Height = 23
+      Top = 30
+      Width = 56
+      Font.Color = clWhite
+      Font.Name = 'Segoe UI Light'
+      Font.Style = [fsBold]
+      ParentColor = True
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 0
+    end
+    object Label53: TLabel
+      Left = 128
+      Height = 21
+      Top = 32
+      Width = 28
+      Caption = 'Dur'
+    end
+    object edDuracao: TEdit
+      Left = 165
+      Height = 23
+      Top = 30
+      Width = 43
+      Font.Color = clWhite
+      Font.Name = 'Segoe UI Light'
+      Font.Style = [fsBold]
+      ParentColor = True
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 1
+    end
+  end
+  object pnBack: TPanel
+    Left = 10
+    Height = 417
+    Top = 97
+    Width = 221
+    Align = alClient
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 417
+    ClientWidth = 221
+    Font.Color = clBlack
+    Font.Name = 'Segoe UI Light'
+    ParentFont = False
+    TabOrder = 1
+    object nvReu: TDBNavigator
+      Left = 5
+      Height = 36
+      Top = 376
+      Width = 211
+      Align = alBottom
+      BevelOuter = bvNone
+      BorderSpacing.Around = 5
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 36
+      ClientWidth = 211
+      DataSource = dsReu
+      Flat = True
+      Hints.Strings = (
+        'Primeiro'
+        'Anterior'
+        'Próximo'
+        'Último'
+        'Insert record'
+        'Delete record'
+        'Edit record'
+        'Post edit'
+        'Cancel edit'
+        'Refresh data'
+      )
+      Options = []
+      TabOrder = 0
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+    end
+    object grReu: TDBGrid
+      Left = 5
+      Height = 366
+      Top = 5
+      Width = 211
+      Align = alClient
+      BorderSpacing.Around = 5
+      BorderStyle = bsNone
+      Color = clWhite
+      Columns = <      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Num'
+          FieldName = 'NRO_REU'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Reunião'
+          Width = 120
+          FieldName = 'DATA_REU'
+        end>
+      DataSource = dsReu
+      DefaultRowHeight = 29
+      FixedColor = clWhite
+      FixedCols = 0
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Segoe UI Light'
+      Options = [dgTitles, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+      ParentFont = False
+      ReadOnly = True
+      Scrollbars = ssAutoBoth
+      TabOrder = 1
+      TitleFont.Color = clBlack
+      TitleFont.Height = -16
+      TitleFont.Name = 'Segoe UI Light'
+    end
+  end
+  object dsReu: TDataSource
+    AutoEdit = False
+    Left = 24
+    Top = 152
+  end
+end

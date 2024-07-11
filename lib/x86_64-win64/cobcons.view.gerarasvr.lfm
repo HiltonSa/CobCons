@@ -1,0 +1,265 @@
+object FrmGerarAsvr: TFrmGerarAsvr
+  Left = 1694
+  Height = 417
+  Top = 195
+  Width = 850
+  BorderStyle = bsNone
+  BorderWidth = 5
+  Caption = 'FrmGerarAsvr'
+  ClientHeight = 417
+  ClientWidth = 850
+  Font.Color = clWhite
+  Font.Height = -16
+  Font.Name = 'Segoe UI Light'
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  Position = poMainFormCenter
+  ShowHint = True
+  LCLVersion = '2.2.4.0'
+  object pnTitulo: TPanel
+    Left = 10
+    Height = 75
+    Top = 10
+    Width = 830
+    Align = alTop
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    Caption = 'Gerar Arquivo ASVR'
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -24
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+    OnMouseMove = pnTituloMouseMove
+  end
+  object pnAcoes: TPanel
+    Left = 10
+    Height = 317
+    Top = 90
+    Width = 136
+    Align = alLeft
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 317
+    ClientWidth = 136
+    Color = clGray
+    ParentColor = False
+    TabOrder = 1
+    object SpeedButton1: TSpeedButton
+      Left = 2
+      Height = 39
+      Top = 2
+      Width = 132
+      Action = pesquisar
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Images = DM.IL18
+      ImageIndex = 43
+      Margin = 2
+    end
+    object SpeedButton2: TSpeedButton
+      Left = 2
+      Height = 39
+      Top = 84
+      Width = 132
+      Action = Cancelar
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Images = DM.IL18
+      ImageIndex = 12
+      Margin = 2
+    end
+    object SpeedButton3: TSpeedButton
+      Left = 2
+      Height = 39
+      Top = 43
+      Width = 132
+      Action = gravar
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Images = DM.IL18
+      ImageIndex = 13
+      Margin = 2
+    end
+  end
+  object pnBack: TPanel
+    Left = 151
+    Height = 317
+    Top = 90
+    Width = 689
+    Align = alClient
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 317
+    ClientWidth = 689
+    Color = clGray
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 2
+    object Label1: TLabel
+      Left = 31
+      Height = 21
+      Top = 10
+      Width = 69
+      Caption = 'Mês / Ano'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 48
+      Height = 21
+      Top = 42
+      Width = 52
+      Caption = 'Arquivo'
+      ParentColor = False
+    end
+    object edArq: TEdit
+      Left = 109
+      Height = 29
+      Hint = 'Clique para escolher onde gravar o arquivo pra importação'
+      Top = 40
+      Width = 402
+      OnClick = edArqClick
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 1
+      TextHint = 'Clique para escolher onde gravar o arquivo'
+    end
+    object dtBase: TDateTimePicker
+      Left = 112
+      Height = 29
+      Top = 8
+      Width = 87
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      TabOrder = 0
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 44252
+      Time = 0.469097465276718
+      UseDefaultSeparators = True
+      HideDateTimeParts = [dtpDay]
+      MonthNames = 'short'
+      ShowMonthNames = True
+    end
+    object Label4: TLabel
+      Left = 210
+      Height = 21
+      Top = 10
+      Width = 91
+      Caption = 'Tipo Remessa'
+      ParentColor = False
+    end
+    object cboRemessa: TComboBox
+      Left = 315
+      Height = 29
+      Top = 8
+      Width = 100
+      ItemHeight = 21
+      ItemIndex = 0
+      Items.Strings = (
+        'Inclusão'
+        'Alteração'
+      )
+      TabOrder = 2
+      Text = 'Inclusão'
+    end
+    object grPesq: TDBGrid
+      Left = 0
+      Height = 237
+      Top = 80
+      Width = 689
+      Align = alBottom
+      BorderStyle = bsNone
+      Color = clWhite
+      Columns = <      
+        item
+          Alignment = taCenter
+          MaxSize = 6
+          Title.Alignment = taCenter
+          Title.Caption = 'Tipo'
+          FieldName = 'FRMPG'
+        end      
+        item
+          Title.Caption = 'Descrição'
+          FieldName = 'DCFRMPG'
+        end      
+        item
+          Alignment = taCenter
+          MaxSize = 4
+          Title.Alignment = taCenter
+          Title.Caption = 'Fis/Jur'
+          FieldName = 'PESS_F_J'
+        end      
+        item
+          Alignment = taCenter
+          MaxSize = 2
+          Title.Alignment = taCenter
+          Title.Caption = 'Qtd'
+          FieldName = 'QTD'
+          DisplayFormat = '0000'
+        end      
+        item
+          Alignment = taRightJustify
+          MaxSize = 8
+          Title.Alignment = taRightJustify
+          Title.Caption = 'Valor'
+          FieldName = 'vlr'
+        end>
+      DataSource = ds
+      DefaultRowHeight = 29
+      FixedColor = clWhite
+      FixedCols = 0
+      Options = [dgEditing, dgTitles, dgTabs, dgConfirmDelete, dgCancelOnExit]
+      Scrollbars = ssAutoBoth
+      TabOrder = 3
+      TitleFont.Color = clBlack
+      TitleFont.Height = -16
+      TitleFont.Name = 'Segoe UI Light'
+    end
+  end
+  object AL: TActionList
+    Images = DM.IL18
+    Left = 88
+    Top = 152
+    object gravar: TAction
+      Caption = 'Gravar'
+      Enabled = False
+      Hint = 'Confirma a solicitação'
+      ImageIndex = 13
+      OnExecute = gravarExecute
+      ShortCut = 113
+    end
+    object Cancelar: TAction
+      Caption = 'Cancelar (Esc)'
+      Hint = 'Clique para Cancelar'
+      ImageIndex = 12
+      OnExecute = CancelarExecute
+      ShortCut = 27
+    end
+    object pesquisar: TAction
+      Caption = 'Pesquisar'
+      ImageIndex = 43
+      OnExecute = pesquisarExecute
+    end
+  end
+  object ds: TDataSource
+    Left = 664
+    Top = 112
+  end
+end

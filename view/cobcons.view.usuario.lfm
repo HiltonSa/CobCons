@@ -1,0 +1,70 @@
+inherited frmUsu: TfrmUsu
+  Caption = 'Manutenção de Usuários'
+  OnClose = nil
+  OnCreate = FormCreate
+  inherited pnTitulo: TPanel
+    inherited lblTitulo: TLabel
+      Width = 108
+      Caption = 'Usuários'
+    end
+  end
+  inherited pnBackGround: TPanel
+    inherited Panel2: TPanel
+      inherited txtPesq: TEdit
+        Top = 16
+      end
+      inherited cboCampo: TComboBox
+        Left = 80
+        Top = 16
+      end
+    end
+    inherited grPesq: TDBGrid
+      Columns = <      
+        item
+          Alignment = taCenter
+          PickList.Strings = (          )
+          Title.Alignment = taCenter
+          Title.Caption = 'Código'
+          Width = 60
+          FieldName = 'CD_USU'
+          DisplayFormat = '00'
+        end      
+        item
+          PickList.Strings = (          )
+          Title.Caption = 'Usuário'
+          Width = 150
+          FieldName = 'nm_usu'
+        end      
+        item
+          Alignment = taCenter
+          PickList.Strings = (          )
+          Title.Alignment = taCenter
+          Title.Caption = 'Ativo'
+          FieldName = 'dcati'
+        end>
+      TitleFont.Height = -16
+    end
+    inherited nvPesq: TDBNavigator
+      Hints.Strings = (      )
+    end
+  end
+  inherited pnRodape: TPanel
+    Caption = ''
+  end
+  inherited AL: TActionList
+    Left = 296
+    inherited Pesquisa: TAction
+      OnExecute = PesquisaExecute
+    end
+    inherited Novo: TAction
+      OnExecute = NovoExecute
+    end
+    inherited Altera: TAction
+      ImageIndex = 13
+      OnExecute = AlteraExecute
+    end
+    inherited Exclui: TAction
+      OnExecute = ExcluiExecute
+    end
+  end
+end

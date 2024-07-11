@@ -1,0 +1,90 @@
+object FrmMsg: TFrmMsg
+  Left = 593
+  Height = 159
+  Top = 238
+  Width = 405
+  BorderStyle = bsNone
+  BorderWidth = 5
+  Caption = 'Mensagem'
+  ClientHeight = 159
+  ClientWidth = 405
+  Color = 9207136
+  DefaultMonitor = dmPrimary
+  Font.Color = clWhite
+  Font.Height = -16
+  Font.Name = 'Segoe UI'
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  Position = poMainFormCenter
+  ShowHint = True
+  LCLVersion = '2.2.0.4'
+  object btSim: TSpeedButton
+    Left = 8
+    Height = 39
+    Top = 112
+    Width = 161
+    Action = acSim
+    Flat = True
+    Margin = 5
+    Spacing = 20
+  end
+  object btNao: TSpeedButton
+    Left = 240
+    Height = 39
+    Top = 112
+    Width = 161
+    Action = acNao
+    Flat = True
+    Margin = 5
+    Spacing = 20
+  end
+  object pnMsg: TPanel
+    Left = 8
+    Height = 98
+    Top = 8
+    Width = 393
+    BevelOuter = bvNone
+    Caption = 'pnMsg'
+    Color = 6246708
+    Font.Color = clWhite
+    Font.Height = -19
+    Font.Name = 'Segoe UI'
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+    Wordwrap = True
+  end
+  object al: TActionList
+    Left = 32
+    Top = 24
+    object acOk: TAction
+      Caption = 'Ok'
+      ImageIndex = 17
+      OnExecute = acSimExecute
+    end
+    object acCancelar: TAction
+      Caption = 'Cancelar (Esc)'
+      ImageIndex = 12
+      OnExecute = acNaoExecute
+      ShortCut = 27
+    end
+    object acSim: TAction
+      Caption = 'Sim (F2)'
+      ImageIndex = 17
+      OnExecute = acSimExecute
+      ShortCut = 113
+    end
+    object acNao: TAction
+      Caption = 'Não (Esc)'
+      ImageIndex = 12
+      OnExecute = acNaoExecute
+      ShortCut = 27
+    end
+    object acSimEnter: TAction
+      Caption = 'Sim (Enter)'
+      ImageIndex = 17
+      OnExecute = acSimExecute
+    end
+  end
+end

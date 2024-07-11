@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2008/03/26 20:08:19.685.pas,C:\Documents and Settings\user\Meus documentos\Borland Studio Projects\Unit1.pas=C:\Documents and Settings\user\Meus documentos\Borland Studio Projects\cca\UnitDados.pas</Transaction>
+    <Transaction>2008/03/26 20:08:19.685.dfm,C:\Documents and Settings\user\Meus documentos\Borland Studio Projects\Unit1.dfm=C:\Documents and Settings\user\Meus documentos\Borland Studio Projects\cca\UnitDados.dfm</Transaction>
+    <Transaction>2008/03/26 20:08:29.828.bdsproj,C:\Documents and Settings\user\Meus documentos\Borland Studio Projects\Project1.bdsproj=C:\Documents and Settings\user\Meus documentos\Borland Studio Projects\cca\ConversorDados.bdsproj</Transaction>
+    <Transaction>2008/03/26 20:17:22.025.pas,C:\Documents and Settings\user\Meus documentos\Borland Studio Projects\cca\Unit1.pas=C:\Documents and Settings\user\Meus documentos\Borland Studio Projects\cca\Data.pas</Transaction>
+    <Transaction>2008/03/26 20:17:22.025.dfm,C:\Documents and Settings\user\Meus documentos\Borland Studio Projects\cca\Unit1.dfm=C:\Documents and Settings\user\Meus documentos\Borland Studio Projects\cca\Data.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

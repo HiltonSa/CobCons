@@ -1,0 +1,376 @@
+object frmAge: TfrmAge
+  Left = 343
+  Height = 513
+  Top = 84
+  Width = 833
+  BorderStyle = bsNone
+  BorderWidth = 5
+  Caption = 'Compromissos no Dia'
+  ClientHeight = 513
+  ClientWidth = 833
+  Color = clBtnFace
+  Font.Color = clWhite
+  Font.Height = -16
+  Font.Name = 'Segoe UI Light'
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  Position = poScreenCenter
+  ShowHint = True
+  LCLVersion = '2.2.0.4'
+  object pnAcoes: TPanel
+    Left = 10
+    Height = 406
+    Top = 97
+    Width = 137
+    Align = alLeft
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 406
+    ClientWidth = 137
+    Color = clSilver
+    ParentColor = False
+    TabOrder = 0
+    object btnSair: TSpeedButton
+      Left = 5
+      Height = 45
+      Top = 146
+      Width = 127
+      Action = alterar
+      Align = alTop
+      BorderSpacing.Around = 5
+      Flat = True
+      Margin = 20
+    end
+    object btnExcluir: TSpeedButton
+      Left = 2
+      Height = 45
+      Top = 96
+      Width = 133
+      Action = Exclui
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Margin = 20
+    end
+    object btnAlterar: TSpeedButton
+      Left = 2
+      Height = 45
+      Top = 49
+      Width = 133
+      Action = Contatar
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Margin = 20
+    end
+    object btnIncluir: TSpeedButton
+      Left = 2
+      Height = 45
+      Top = 2
+      Width = 133
+      Action = Pesquisa
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Margin = 20
+    end
+    object btnSair1: TSpeedButton
+      Left = 5
+      Height = 45
+      Top = 196
+      Width = 127
+      Action = Sair
+      Align = alTop
+      BorderSpacing.Around = 5
+      Flat = True
+      Margin = 20
+    end
+  end
+  object pnTitulo: TPanel
+    Left = 10
+    Height = 82
+    Top = 10
+    Width = 813
+    Align = alTop
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    Caption = 'Agenda de Compromissos'
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -27
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 1
+  end
+  object pnBack: TPanel
+    Left = 152
+    Height = 406
+    Top = 97
+    Width = 671
+    Align = alClient
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 406
+    ClientWidth = 671
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    ParentFont = False
+    TabOrder = 2
+    object Panel3: TPanel
+      Left = 5
+      Height = 113
+      Top = 288
+      Width = 661
+      Align = alBottom
+      BorderSpacing.Around = 5
+      BevelOuter = bvNone
+      ClientHeight = 113
+      ClientWidth = 661
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 8
+        Height = 21
+        Top = 16
+        Width = 86
+        Caption = 'Observações'
+      end
+      object DBMemo1: TDBMemo
+        Left = 104
+        Height = 89
+        Top = 16
+        Width = 505
+        DataField = 'OBS'
+        DataSource = DS
+        TabOrder = 0
+      end
+    end
+    object Panel2: TPanel
+      Left = 5
+      Height = 41
+      Top = 5
+      Width = 661
+      Align = alTop
+      BorderSpacing.Around = 5
+      BevelOuter = bvNone
+      ClientHeight = 41
+      ClientWidth = 661
+      TabOrder = 1
+      object Label2: TLabel
+        Left = 8
+        Height = 21
+        Top = 10
+        Width = 23
+        Caption = 'De:'
+      end
+      object Label3: TLabel
+        Left = 149
+        Height = 21
+        Top = 10
+        Width = 23
+        Caption = 'Até'
+      end
+      object dt1: TDateTimePicker
+        Left = 32
+        Height = 29
+        Top = 6
+        Width = 110
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        AutoSize = False
+        TabOrder = 0
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 38726
+        Time = 0.454289039349533
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object dt2: TDateTimePicker
+        Left = 176
+        Height = 29
+        Top = 6
+        Width = 110
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        AutoSize = False
+        TabOrder = 1
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 38726
+        Time = 0.454289039349533
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+    end
+    object Panel1: TPanel
+      Left = 5
+      Height = 232
+      Top = 51
+      Width = 661
+      Align = alClient
+      BorderSpacing.Around = 5
+      BevelOuter = bvNone
+      ClientHeight = 232
+      ClientWidth = 661
+      TabOrder = 2
+      object grCon: TDBGrid
+        Left = 0
+        Height = 196
+        Top = 0
+        Width = 661
+        Align = alClient
+        BorderStyle = bsNone
+        Color = clWhite
+        Columns = <        
+          item
+            Alignment = taCenter
+            Title.Alignment = taCenter
+            Title.Caption = 'Imp'
+            Width = 50
+            FieldName = 'DCPRIORIDADE'
+          end        
+          item
+            Alignment = taCenter
+            Title.Alignment = taCenter
+            Title.Caption = 'Data'
+            Width = 75
+            FieldName = 'DT_AGE'
+            DisplayFormat = 'dd/mm/yy'
+          end        
+          item
+            Alignment = taCenter
+            Title.Alignment = taCenter
+            Title.Caption = 'Grupo'
+            Width = 50
+            FieldName = 'GRUPO'
+          end        
+          item
+            Alignment = taCenter
+            Title.Alignment = taCenter
+            Title.Caption = 'Seq'
+            Width = 30
+            FieldName = 'SEQ'
+          end        
+          item
+            Alignment = taCenter
+            Title.Alignment = taCenter
+            Title.Caption = 'Cota'
+            Width = 47
+            FieldName = 'COTA'
+          end        
+          item
+            Title.Caption = 'Nome'
+            Width = 240
+            FieldName = 'NMCOTA'
+          end        
+          item
+            Title.Caption = 'Sit'
+            Width = 75
+            FieldName = 'DCSTATUS'
+          end>
+        DataSource = DS
+        DefaultRowHeight = 29
+        FixedColor = clWhite
+        FixedCols = 0
+        Options = [dgTitles, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+        ReadOnly = True
+        Scrollbars = ssAutoBoth
+        TabOrder = 0
+        TitleFont.Color = clBlack
+        TitleFont.Height = -16
+        TitleFont.Name = 'Segoe UI Light'
+        OnDrawColumnCell = grConDrawColumnCell
+      end
+      object nvPesq: TDBNavigator
+        Left = 0
+        Height = 36
+        Top = 196
+        Width = 661
+        Align = alBottom
+        BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 36
+        ClientWidth = 661
+        DataSource = DS
+        Flat = True
+        Options = []
+        TabOrder = 1
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+      end
+    end
+  end
+  object DS: TDataSource
+    AutoEdit = False
+    Left = 504
+    Top = 104
+  end
+  object AL: TActionList
+    Images = DM.IL18
+    Left = 224
+    Top = 192
+    object Pesquisa: TAction
+      Category = 'Manutencao'
+      Caption = '&Consultar (F9)'
+      Hint = 'Clique (ou F9) para consultar os compromissos do dia'
+      ImageIndex = 43
+      OnExecute = PesquisaExecute
+    end
+    object Contatar: TAction
+      Category = 'Manutencao'
+      Caption = 'C&liente (F3)'
+      Hint = 'Clique (ou F3) para consultar os dados do cliente'
+      ImageIndex = 1
+      OnExecute = ContatarExecute
+    end
+    object Exclui: TAction
+      Category = 'Manutencao'
+      Caption = 'Situação'
+      Hint = 'Alternar situação entre Realizado e  Aberto'
+      ImageIndex = 17
+      OnExecute = ExcluiExecute
+    end
+    object Sair: TAction
+      Category = 'Manutencao'
+      Caption = '&Sair'
+      Hint = 'Clique para finalizar'
+      ImageIndex = 5
+      OnExecute = SairExecute
+    end
+    object Importar: TAction
+      Category = 'Manutencao'
+      Caption = '&Importar (F5)'
+      Hint = 'Clique ou F5 para reimportar as pendencias da cota'
+      ImageIndex = 65
+    end
+    object alterar: TAction
+      Caption = 'Alterar'
+      Hint = 'Clique para modificar o compromisso'
+      ImageIndex = 13
+      OnExecute = alterarExecute
+    end
+  end
+end

@@ -1,0 +1,420 @@
+object frmPen: TfrmPen
+  Left = 501
+  Height = 368
+  Top = 159
+  Width = 573
+  BorderStyle = bsNone
+  BorderWidth = 5
+  Caption = 'Pendencias'
+  ClientHeight = 368
+  ClientWidth = 573
+  Color = clBtnFace
+  Font.Color = clWhite
+  Font.Height = -16
+  Font.Name = 'Segoe UI Light'
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  ShowHint = True
+  LCLVersion = '2.2.0.4'
+  object pnAcoes: TPanel
+    Left = 10
+    Height = 269
+    Top = 89
+    Width = 136
+    Align = alLeft
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 269
+    ClientWidth = 136
+    Color = clMoneyGreen
+    ParentColor = False
+    TabOrder = 0
+    object btIncPend: TSpeedButton
+      Left = 0
+      Height = 40
+      Top = 0
+      Width = 136
+      Action = Gravar
+      Align = alTop
+      Flat = True
+      Margin = 20
+      Spacing = 5
+    end
+    object btExcPend: TSpeedButton
+      Left = 0
+      Height = 40
+      Top = 40
+      Width = 136
+      Action = Cancelar
+      Align = alTop
+      Flat = True
+      Margin = 20
+      Spacing = 5
+    end
+  end
+  object pnTitulo: TPanel
+    Left = 10
+    Height = 74
+    Top = 10
+    Width = 553
+    Align = alTop
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 74
+    ClientWidth = 553
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 1
+    OnMouseMove = pnTituloMouseMove
+    object Label51: TLabel
+      Left = 56
+      Height = 21
+      Top = 42
+      Width = 48
+      Caption = 'Grupo'
+    end
+    object Label53: TLabel
+      Left = 167
+      Height = 21
+      Top = 42
+      Width = 36
+      Caption = 'Cota'
+    end
+    object Label54: TLabel
+      Left = 59
+      Height = 21
+      Top = 13
+      Width = 45
+      Caption = 'Nome'
+    end
+    object DBEdit14: TDBEdit
+      Left = 110
+      Height = 29
+      Top = 40
+      Width = 50
+      DataField = 'grupo'
+      DataSource = dsCot
+      ReadOnly = True
+      MaxLength = 0
+      ParentColor = True
+      TabOrder = 3
+      TabStop = False
+    end
+    object DBEdit15: TDBEdit
+      Left = 207
+      Height = 29
+      Top = 40
+      Width = 30
+      DataField = 'seq'
+      DataSource = dsCot
+      ReadOnly = True
+      MaxLength = 0
+      ParentColor = True
+      TabOrder = 4
+      TabStop = False
+    end
+    object DBEdit16: TDBEdit
+      Left = 237
+      Height = 29
+      Top = 40
+      Width = 42
+      DataField = 'cota'
+      DataSource = dsCot
+      ReadOnly = True
+      MaxLength = 0
+      ParentColor = True
+      TabOrder = 1
+      TabStop = False
+    end
+    object DBEdit17: TDBEdit
+      Left = 110
+      Height = 29
+      Top = 10
+      Width = 394
+      DataField = 'nome'
+      DataSource = dsCot
+      ReadOnly = True
+      MaxLength = 0
+      ParentColor = True
+      TabOrder = 0
+      TabStop = False
+    end
+    object Label15: TLabel
+      Left = 334
+      Height = 21
+      Top = 42
+      Width = 62
+      Caption = 'Vlr. Bem'
+    end
+    object DBEdit6: TDBEdit
+      Left = 404
+      Height = 29
+      Top = 40
+      Width = 100
+      DataField = 'PRE_TABE'
+      DataSource = dsCot
+      ReadOnly = True
+      MaxLength = 0
+      ParentColor = True
+      TabOrder = 2
+      TabStop = False
+    end
+  end
+  object pnBack: TPanel
+    Left = 151
+    Height = 269
+    Top = 89
+    Width = 412
+    Align = alClient
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 269
+    ClientWidth = 412
+    Color = clSkyBlue
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 2
+    object Label5: TLabel
+      Left = 17
+      Height = 21
+      Top = 44
+      Width = 130
+      Caption = 'Tipo de Movimento'
+    end
+    object Label6: TLabel
+      Left = 68
+      Height = 21
+      Top = 72
+      Width = 79
+      Caption = 'Vencimento'
+    end
+    object Label7: TLabel
+      Left = 114
+      Height = 21
+      Top = 109
+      Width = 33
+      Caption = 'Valor'
+    end
+    object Label8: TLabel
+      Left = 113
+      Height = 21
+      Top = 13
+      Width = 34
+      Caption = 'Aviso'
+    end
+    object Label11: TLabel
+      Left = 83
+      Height = 21
+      Top = 140
+      Width = 64
+      Caption = 'Aquisição'
+      Layout = tlCenter
+    end
+    object Label12: TLabel
+      Left = 95
+      Height = 21
+      Top = 172
+      Width = 52
+      Caption = 'Reserva'
+      Layout = tlCenter
+    end
+    object Label13: TLabel
+      Left = 31
+      Height = 21
+      Top = 203
+      Width = 116
+      Caption = 'Tx. Administração'
+      Layout = tlCenter
+    end
+    object Label14: TLabel
+      Left = 101
+      Height = 21
+      Top = 236
+      Width = 46
+      Caption = 'Outros'
+      Layout = tlCenter
+    end
+    object cboTmv: TComboBox
+      Left = 153
+      Height = 29
+      Top = 40
+      Width = 170
+      ItemHeight = 21
+      ItemIndex = 0
+      Items.Strings = (
+        '01 PAGTO PARCELA'
+        'SR PAGTO SLD REMANESCENTE'
+        '04 PAGTO RATEIO'
+        '14 PAGTO CUSTAS'
+        '15 PAGTO DESPESAS'
+      )
+      Style = csDropDownList
+      TabOrder = 0
+      Text = '01 PAGTO PARCELA'
+    end
+    object edtValor: TCalcEdit
+      Left = 153
+      Height = 29
+      Top = 104
+      Width = 150
+      CalculatorLayout = clNormal
+      AsInteger = 0
+      ButtonWidth = 29
+      DialogTop = 0
+      DialogLeft = 0
+      NumGlyphs = 1
+      FocusOnButtonClick = True
+      MaxLength = 0
+      Spacing = 2
+      TabOrder = 2
+      OnExit = edtValorExit
+      Text = '0'
+    end
+    object dtVenc: TDateTimePicker
+      Left = 152
+      Height = 29
+      Top = 72
+      Width = 101
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      TabOrder = 1
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 44229
+      Time = 0.480528194442741
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+    end
+    object edAquisicao: TEdit
+      Left = 152
+      Height = 29
+      Top = 136
+      Width = 121
+      Alignment = taRightJustify
+      ParentColor = True
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 5
+    end
+    object edReserva: TEdit
+      Left = 152
+      Height = 29
+      Top = 168
+      Width = 121
+      Alignment = taRightJustify
+      ParentColor = True
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 6
+    end
+    object edAdminist: TEdit
+      Left = 152
+      Height = 29
+      Top = 200
+      Width = 121
+      Alignment = taRightJustify
+      ParentColor = True
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 7
+    end
+    object edOutros: TEdit
+      Left = 153
+      Height = 29
+      Top = 232
+      Width = 121
+      Alignment = taRightJustify
+      ParentColor = True
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 8
+    end
+    object edPNormal: TEdit
+      Left = 276
+      Height = 29
+      Top = 136
+      Width = 70
+      Alignment = taRightJustify
+      ParentColor = True
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 9
+    end
+    object DBEdit7: TDBEdit
+      Left = 276
+      Height = 29
+      Top = 203
+      Width = 70
+      DataField = 'P_ADMINS'
+      DataSource = dsCot
+      ReadOnly = True
+      MaxLength = 0
+      ParentColor = True
+      TabOrder = 4
+      TabStop = False
+    end
+    object DBEdit8: TDBEdit
+      Left = 276
+      Height = 29
+      Top = 168
+      Width = 70
+      DataField = 'P_RESERV'
+      DataSource = dsCot
+      ReadOnly = True
+      MaxLength = 0
+      ParentColor = True
+      TabOrder = 3
+      TabStop = False
+    end
+    object edAviso: TEdit
+      Left = 153
+      Height = 29
+      Top = 8
+      Width = 70
+      Alignment = taCenter
+      ParentColor = True
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 10
+    end
+  end
+  object dsCot: TDataSource
+    AutoEdit = False
+    DataSet = DM.cdsCot
+    Left = 96
+    Top = 184
+  end
+  object AL: TActionList
+    Images = DM.IL18
+    Left = 56
+    Top = 184
+    object Gravar: TAction
+      Caption = 'Gravar'
+      Hint = 'Clique para salvar as informações'
+      ImageIndex = 17
+      OnExecute = GravarExecute
+    end
+    object Cancelar: TAction
+      Caption = 'Cancelar'
+      Hint = 'Clique para cancelar as alterações'
+      ImageIndex = 5
+      OnExecute = CancelarExecute
+    end
+  end
+end

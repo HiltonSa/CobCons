@@ -1,0 +1,292 @@
+object FrmFaixasComissao: TFrmFaixasComissao
+  Left = 283
+  Height = 483
+  Top = 108
+  Width = 856
+  BorderStyle = bsNone
+  BorderWidth = 5
+  Caption = 'FrmFaixasComissao'
+  ClientHeight = 483
+  ClientWidth = 856
+  Font.Color = clWhite
+  Font.Height = -16
+  Font.Name = 'Segoe UI Light'
+  KeyPreview = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  Position = poMainFormCenter
+  ShowHint = True
+  LCLVersion = '2.2.4.0'
+  object pnTitulo: TPanel
+    Left = 10
+    Height = 66
+    Top = 10
+    Width = 836
+    Align = alTop
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    Caption = 'Faixas de Comissão'
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -28
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+    OnMouseMove = pnTituloMouseMove
+  end
+  object pnAcoes: TPanel
+    Left = 10
+    Height = 337
+    Top = 81
+    Width = 136
+    Align = alLeft
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 337
+    ClientWidth = 136
+    Color = clGray
+    ParentColor = False
+    TabOrder = 1
+    object btnNova: TSpeedButton
+      Left = 2
+      Height = 47
+      Top = 2
+      Width = 132
+      Action = nova
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Images = DM.IL18
+      ImageIndex = 2
+      Margin = 2
+    end
+    object btnSair: TSpeedButton
+      Left = 2
+      Height = 47
+      Top = 149
+      Width = 132
+      Action = Sair
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Images = DM.IL18
+      ImageIndex = 5
+      Margin = 2
+    end
+    object btnVer: TSpeedButton
+      Left = 2
+      Height = 47
+      Top = 100
+      Width = 132
+      Action = apagar
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Images = DM.IL18
+      ImageIndex = 11
+      Margin = 2
+    end
+    object btnImprimir: TSpeedButton
+      Left = 2
+      Height = 47
+      Top = 51
+      Width = 132
+      Action = ver
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Images = DM.IL18
+      ImageIndex = 16
+      Margin = 2
+    end
+  end
+  object pnRodape: TPanel
+    Left = 10
+    Height = 50
+    Top = 423
+    Width = 836
+    Align = alBottom
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    Caption = 'Rodape'
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 2
+  end
+  object pnBackGround: TPanel
+    Left = 151
+    Height = 337
+    Top = 81
+    Width = 695
+    Align = alClient
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 337
+    ClientWidth = 695
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    ParentFont = False
+    TabOrder = 3
+    object Panel4: TPanel
+      Left = 0
+      Height = 337
+      Top = 0
+      Width = 695
+      Align = alClient
+      BevelOuter = bvNone
+      ClientHeight = 337
+      ClientWidth = 695
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Segoe UI Light'
+      ParentFont = False
+      TabOrder = 0
+      object grPesq: TDBGrid
+        Left = 5
+        Height = 236
+        Top = 55
+        Width = 685
+        Align = alClient
+        BorderSpacing.Around = 5
+        BorderStyle = bsNone
+        Color = clWhite
+        Columns = <        
+          item
+            Alignment = taCenter
+            Title.Alignment = taCenter
+            Title.Caption = 'Código'
+            FieldName = 'CODIGO'
+            DisplayFormat = '000'
+          end        
+          item
+            Title.Caption = 'Descrição'
+            FieldName = 'DESCRICAO'
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Caption = 'Mínimo'
+            FieldName = 'minimo'
+            DisplayFormat = ',#0.00'
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Caption = 'Máximo'
+            FieldName = 'Maximo'
+            DisplayFormat = ',#0.00'
+          end>
+        DataSource = ds
+        DefaultRowHeight = 29
+        FixedColor = clWhite
+        FixedCols = 0
+        Options = [dgTitles, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+        ReadOnly = True
+        Scrollbars = ssAutoBoth
+        TabOrder = 0
+        TitleFont.Color = clBlack
+        TitleFont.Height = -16
+        TitleFont.Name = 'Segoe UI Light'
+        OnDblClick = grPesqDblClick
+      end
+      object nvPesq: TDBNavigator
+        Left = 5
+        Height = 36
+        Top = 296
+        Width = 685
+        Align = alBottom
+        BevelOuter = bvNone
+        BorderSpacing.Around = 5
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 36
+        ClientWidth = 685
+        DataSource = ds
+        Flat = True
+        Options = []
+        TabOrder = 1
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+      end
+      object Panel1: TPanel
+        Left = 0
+        Height = 50
+        Top = 0
+        Width = 695
+        Align = alTop
+        BevelOuter = bvNone
+        ClientHeight = 50
+        ClientWidth = 695
+        TabOrder = 2
+        object cboAdm: THNSCombox
+          Left = 128
+          Height = 29
+          Top = 13
+          Width = 304
+          ItemHeight = 21
+          OnSelect = cboAdmSelect
+          TabOrder = 0
+        end
+        object Label1: TLabel
+          Left = 18
+          Height = 21
+          Top = 15
+          Width = 103
+          Caption = 'Adm Consorcio'
+          ParentColor = False
+        end
+      end
+    end
+  end
+  object AL: TActionList
+    Images = DM.IL18
+    Left = 40
+    Top = 16
+    object nova: TAction
+      Category = 'Manutencao'
+      Caption = 'Nova'
+      Hint = 'Clique para calcular a comissão de permanência'
+      ImageIndex = 2
+      OnExecute = novaExecute
+    end
+    object Sair: TAction
+      Category = 'Manutencao'
+      Caption = '&Sair'
+      Hint = 'Clique para finalizar'
+      ImageIndex = 5
+      OnExecute = SairExecute
+    end
+    object ver: TAction
+      Caption = 'Ver'
+      Hint = 'Ver dados da comissão de permanencia'
+      ImageIndex = 16
+      OnExecute = verExecute
+    end
+    object imprimir: TAction
+      Caption = 'Imprimir'
+      Hint = 'Gera relatório para impressão'
+      ImageIndex = 28
+      Visible = False
+    end
+    object apagar: TAction
+      Caption = 'Apagar'
+      Hint = 'Excluir Último Cálculo'
+      ImageIndex = 11
+      OnExecute = apagarExecute
+    end
+  end
+  object ds: TDataSource
+    Left = 80
+    Top = 16
+  end
+end

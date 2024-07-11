@@ -1,0 +1,356 @@
+inherited FrmFichaVenda: TFrmFichaVenda
+  Left = 279
+  Height = 431
+  Top = 114
+  Width = 846
+  ClientHeight = 431
+  ClientWidth = 846
+  OnCreate = FormCreate
+  inherited pnTitulo: TPanel
+    Width = 826
+  end
+  inherited pnAcoes: TPanel
+    Height = 324
+    ClientHeight = 324
+  end
+  inherited pnBack: TPanel
+    Height = 324
+    Width = 685
+    ClientHeight = 324
+    ClientWidth = 685
+    object Label1: TLabel[0]
+      Left = 32
+      Height = 21
+      Top = 13
+      Width = 49
+      Caption = 'Código'
+      ParentColor = False
+    end
+    object edCodigo: TEdit[1]
+      Left = 90
+      Height = 29
+      Top = 11
+      Width = 80
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 0
+    end
+    object Label2: TLabel[2]
+      Left = 26
+      Height = 21
+      Top = 45
+      Width = 57
+      Caption = 'Empresa'
+      ParentColor = False
+    end
+    object cboEmpresa: THNSCombox[3]
+      Left = 90
+      Height = 29
+      Top = 43
+      Width = 382
+      AutoComplete = True
+      AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
+      ItemHeight = 21
+      TabOrder = 1
+    end
+    object Label3: TLabel[4]
+      Left = 485
+      Height = 21
+      Top = 45
+      Width = 60
+      Caption = 'Contrato'
+      ParentColor = False
+    end
+    object edContrato: TEdit[5]
+      Left = 552
+      Height = 29
+      Top = 43
+      Width = 120
+      MaxLength = 15
+      NumbersOnly = True
+      OnExit = edContratoExit
+      TabOrder = 2
+    end
+    object Label4: TLabel[6]
+      Left = 40
+      Height = 21
+      Top = 77
+      Width = 43
+      Caption = 'Grupo'
+      ParentColor = False
+    end
+    object edGrupo: TEdit[7]
+      Left = 90
+      Height = 29
+      Top = 75
+      Width = 82
+      MaxLength = 10
+      TabOrder = 3
+    end
+    object Label5: TLabel[8]
+      Left = 183
+      Height = 21
+      Top = 77
+      Width = 32
+      Caption = 'Cota'
+      ParentColor = False
+    end
+    object edCota: TEdit[9]
+      Left = 223
+      Height = 29
+      Top = 75
+      Width = 64
+      MaxLength = 5
+      TabOrder = 4
+    end
+    object Label6: TLabel[10]
+      Left = 296
+      Height = 21
+      Top = 78
+      Width = 66
+      Caption = 'Dt. Venda'
+      ParentColor = False
+    end
+    object dtVenda: TDateTimePicker[11]
+      Left = 371
+      Height = 29
+      Top = 75
+      Width = 101
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      TabOrder = 5
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 44944
+      Time = 0.88783878472168
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+      Alignment = taCenter
+    end
+    object Label7: TLabel[12]
+      Left = 21
+      Height = 21
+      Top = 108
+      Width = 62
+      Caption = 'Dia Venc.'
+      ParentColor = False
+    end
+    object edDiaVenc: TEdit[13]
+      Left = 90
+      Height = 29
+      Top = 106
+      Width = 51
+      Alignment = taCenter
+      MaxLength = 2
+      NumbersOnly = True
+      TabOrder = 6
+    end
+    object Label8: TLabel[14]
+      Left = 291
+      Height = 21
+      Top = 108
+      Width = 71
+      Caption = 'Valor Pago'
+      ParentColor = False
+    end
+    object edVlrPago: TEdit[15]
+      Left = 371
+      Height = 29
+      Top = 106
+      Width = 101
+      Alignment = taRightJustify
+      OnExit = edVlrPagoExit
+      TabOrder = 7
+    end
+    object Label9: TLabel[16]
+      Left = 16
+      Height = 21
+      Top = 144
+      Width = 65
+      Caption = 'Vendedor'
+      ParentColor = False
+    end
+    object cboAgente: THNSCombox[17]
+      Left = 90
+      Height = 29
+      Top = 139
+      Width = 358
+      AutoComplete = True
+      AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
+      ItemHeight = 21
+      TabOrder = 8
+    end
+    object Label10: TLabel[18]
+      Left = 456
+      Height = 21
+      Top = 143
+      Width = 57
+      Caption = 'Situação'
+      ParentColor = False
+    end
+    object cboSit: THNSCombox[19]
+      Left = 515
+      Height = 29
+      Top = 139
+      Width = 157
+      AutoComplete = True
+      AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
+      ItemHeight = 21
+      OnSelect = cboSitSelect
+      TabOrder = 9
+    end
+    object Label11: TLabel[20]
+      Left = 19
+      Height = 21
+      Top = 173
+      Width = 62
+      Caption = 'Cód Bem'
+      ParentColor = False
+    end
+    object edCdBem: TEdit[21]
+      Left = 90
+      Height = 29
+      Top = 171
+      Width = 100
+      CharCase = ecUppercase
+      MaxLength = 10
+      OnExit = edCdBemExit
+      TabOrder = 10
+    end
+    object Label12: TLabel[22]
+      Left = 208
+      Height = 21
+      Top = 173
+      Width = 32
+      Caption = 'Desc'
+      ParentColor = False
+    end
+    object edDcBem: TEdit[23]
+      Left = 248
+      Height = 29
+      Top = 171
+      Width = 274
+      MaxLength = 50
+      TabOrder = 11
+    end
+    object Label13: TLabel[24]
+      Left = 536
+      Height = 21
+      Top = 173
+      Width = 33
+      Caption = 'Valor'
+      ParentColor = False
+    end
+    object edValor: TEdit[25]
+      Left = 576
+      Height = 29
+      Top = 171
+      Width = 96
+      Alignment = taRightJustify
+      OnExit = edValorExit
+      TabOrder = 12
+    end
+    object Label14: TLabel[26]
+      Left = 40
+      Height = 21
+      Top = 206
+      Width = 41
+      Caption = 'Nome'
+      ParentColor = False
+    end
+    object edNome: TEdit[27]
+      Left = 90
+      Height = 29
+      Top = 202
+      Width = 432
+      CharCase = ecUppercase
+      MaxLength = 60
+      TabOrder = 13
+    end
+    object Label15: TLabel[28]
+      Left = 40
+      Height = 21
+      Top = 238
+      Width = 41
+      Caption = 'Fís/Jur'
+      ParentColor = False
+    end
+    object cboTpPes: TComboBox[29]
+      Left = 90
+      Height = 29
+      Top = 235
+      Width = 100
+      ItemHeight = 21
+      Items.Strings = (
+        'Fisica'
+        'Juridica'
+      )
+      TabOrder = 14
+    end
+    object Label16: TLabel[30]
+      Left = 192
+      Height = 21
+      Top = 238
+      Width = 73
+      Caption = 'CPF / CNPJ'
+      ParentColor = False
+    end
+    object edCpfCnpj: TEdit[31]
+      Left = 272
+      Height = 29
+      Top = 235
+      Width = 152
+      MaxLength = 18
+      OnExit = edCpfCnpjExit
+      TabOrder = 15
+    end
+    object Label17: TLabel[32]
+      Left = 51
+      Height = 21
+      Top = 270
+      Width = 33
+      Caption = 'DDD'
+      ParentColor = False
+    end
+    object edDDD: TEdit[33]
+      Left = 90
+      Height = 29
+      Top = 267
+      Width = 51
+      Alignment = taCenter
+      MaxLength = 2
+      NumbersOnly = True
+      TabOrder = 16
+    end
+    object Label18: TLabel[34]
+      Left = 232
+      Height = 21
+      Top = 270
+      Width = 33
+      Caption = 'Fone'
+      ParentColor = False
+    end
+    object edFone: TEdit[35]
+      Left = 272
+      Height = 29
+      Top = 267
+      Width = 152
+      MaxLength = 10
+      OnExit = edFoneExit
+      TabOrder = 17
+    end
+  end
+  inherited AL: TActionList
+    inherited Gravar: TAction
+      Enabled = False
+      OnExecute = GravarExecute
+    end
+  end
+end

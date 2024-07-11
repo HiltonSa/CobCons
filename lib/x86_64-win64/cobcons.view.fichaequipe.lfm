@@ -1,0 +1,94 @@
+inherited FrmFichaEquipe: TFrmFichaEquipe
+  Height = 278
+  Width = 618
+  ClientHeight = 278
+  ClientWidth = 618
+  OnCreate = FormCreate
+  inherited pnTitulo: TPanel
+    Width = 598
+  end
+  inherited pnAcoes: TPanel
+    Height = 171
+    ClientHeight = 171
+  end
+  inherited pnBack: TPanel
+    Height = 171
+    Width = 457
+    ClientHeight = 171
+    ClientWidth = 457
+    object Label1: TLabel[0]
+      Left = 59
+      Height = 21
+      Top = 22
+      Width = 49
+      Caption = 'Código'
+      ParentColor = False
+    end
+    object edCodigo: TEdit[1]
+      Left = 111
+      Height = 29
+      Top = 20
+      Width = 80
+      Alignment = taCenter
+      NumbersOnly = True
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 0
+      Text = '000'
+    end
+    object Label2: TLabel[2]
+      Left = 62
+      Height = 21
+      Top = 53
+      Width = 46
+      Caption = 'Equipe'
+      ParentColor = False
+    end
+    object edEquipe: TEdit[3]
+      Left = 111
+      Height = 29
+      Top = 51
+      Width = 320
+      CharCase = ecUppercase
+      MaxLength = 50
+      TabOrder = 1
+    end
+    object Label10: TLabel[4]
+      Left = 81
+      Height = 21
+      Top = 85
+      Width = 27
+      Caption = 'Filial'
+      ParentColor = False
+    end
+    object cboFilial: THNSCombox[5]
+      Left = 111
+      Height = 29
+      Top = 82
+      Width = 319
+      ItemHeight = 21
+      TabOrder = 2
+    end
+    object Label11: TLabel[6]
+      Left = 38
+      Height = 21
+      Top = 114
+      Width = 70
+      Caption = 'Supervisor'
+      ParentColor = False
+    end
+    object cboSupervisor: THNSCombox[7]
+      Left = 111
+      Height = 29
+      Top = 112
+      Width = 319
+      ItemHeight = 21
+      TabOrder = 3
+    end
+  end
+  inherited AL: TActionList
+    inherited Gravar: TAction
+      OnExecute = GravarExecute
+    end
+  end
+end

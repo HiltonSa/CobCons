@@ -1,0 +1,170 @@
+object FrmCancelamentosPeriodo: TFrmCancelamentosPeriodo
+  Left = 743
+  Height = 285
+  Top = 190
+  Width = 496
+  BorderStyle = bsNone
+  BorderWidth = 5
+  Caption = 'Cancelamentos no Periodo'
+  ClientHeight = 285
+  ClientWidth = 496
+  Font.Color = clWhite
+  Font.Height = -16
+  Font.Name = 'Segoe UI Light'
+  KeyPreview = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  Position = poMainFormCenter
+  ShowHint = True
+  LCLVersion = '2.2.4.0'
+  object pnAcoes: TPanel
+    Left = 10
+    Height = 194
+    Top = 81
+    Width = 136
+    Align = alLeft
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 194
+    ClientWidth = 136
+    Color = clMoneyGreen
+    ParentColor = False
+    TabOrder = 0
+    object SpeedButton4: TSpeedButton
+      Left = 0
+      Height = 54
+      Top = 52
+      Width = 136
+      Action = sair
+      Align = alTop
+      Flat = True
+      Margin = 2
+    end
+    object SpeedButton7: TSpeedButton
+      Left = 0
+      Height = 52
+      Top = 0
+      Width = 136
+      Action = imp
+      Align = alTop
+      Flat = True
+      Margin = 2
+    end
+  end
+  object pnBackground: TPanel
+    Left = 151
+    Height = 194
+    Top = 81
+    Width = 335
+    Align = alClient
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 194
+    ClientWidth = 335
+    Color = clSkyBlue
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 1
+    object edIni: TDateTimePicker
+      Left = 132
+      Height = 29
+      Top = 54
+      Width = 101
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      TabOrder = 0
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 43060
+      Time = 0.434143877311726
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+      OnExit = edIniExit
+    end
+    object Label2: TLabel
+      Left = 88
+      Height = 21
+      Top = 58
+      Width = 35
+      Caption = 'Início'
+      ParentColor = False
+    end
+    object edFim: TDateTimePicker
+      Left = 132
+      Height = 29
+      Top = 86
+      Width = 101
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      TabOrder = 1
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 43060
+      Time = 0.434143877311726
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+      OnExit = edFimExit
+    end
+    object Label3: TLabel
+      Left = 100
+      Height = 21
+      Top = 91
+      Width = 23
+      Caption = 'Fim'
+      ParentColor = False
+    end
+  end
+  object pnTitulo: TPanel
+    Left = 10
+    Height = 66
+    Top = 10
+    Width = 476
+    Align = alTop
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    Caption = 'Cancelamentos no Período'
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -28
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 2
+  end
+  object AL: TActionList
+    Images = DM.IL18
+    Left = 176
+    Top = 96
+    object sair: TAction
+      Caption = 'Sair'
+      ImageIndex = 5
+      OnExecute = sairExecute
+    end
+    object imp: TAction
+      Caption = 'Imprimir'
+      Hint = 'Imprime relatório da baixa'
+      ImageIndex = 37
+      OnExecute = impExecute
+      ShortCut = 116
+    end
+  end
+end

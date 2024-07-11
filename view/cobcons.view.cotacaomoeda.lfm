@@ -1,0 +1,327 @@
+object FrmCotacaoMoeda: TFrmCotacaoMoeda
+  Left = 388
+  Height = 554
+  Top = 78
+  Width = 798
+  BorderStyle = bsNone
+  BorderWidth = 5
+  Caption = 'Cotacao de Moedas'
+  ClientHeight = 554
+  ClientWidth = 798
+  Font.Color = clWhite
+  Font.Height = -16
+  Font.Name = 'Segoe UI Light'
+  KeyPreview = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  Position = poMainFormCenter
+  ShowHint = True
+  LCLVersion = '2.2.0.4'
+  object pnTitulo: TPanel
+    Left = 10
+    Height = 82
+    Top = 10
+    Width = 778
+    Align = alTop
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    Caption = 'Cotações de Moeda'
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -28
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+  end
+  object pnAcoes: TPanel
+    Left = 10
+    Height = 447
+    Top = 97
+    Width = 136
+    Align = alLeft
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 447
+    ClientWidth = 136
+    Color = clGray
+    ParentColor = False
+    TabOrder = 1
+    object btnSair: TSpeedButton
+      Left = 2
+      Height = 47
+      Top = 100
+      Width = 132
+      Action = Sair
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Margin = 2
+    end
+    object btnExcluir: TSpeedButton
+      Left = 2
+      Height = 47
+      Top = 51
+      Width = 132
+      Action = gravar
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Margin = 2
+    end
+    object btnImprimir: TSpeedButton
+      Left = 2
+      Height = 47
+      Top = 2
+      Width = 132
+      Action = imprimir
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Margin = 2
+    end
+  end
+  object pnBackGround: TPanel
+    Left = 151
+    Height = 447
+    Top = 97
+    Width = 637
+    Align = alClient
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 447
+    ClientWidth = 637
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    ParentFont = False
+    TabOrder = 2
+    object Panel2: TPanel
+      Left = 5
+      Height = 110
+      Top = 5
+      Width = 627
+      Align = alClient
+      BorderSpacing.Around = 5
+      BevelOuter = bvNone
+      ClientHeight = 110
+      ClientWidth = 627
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Segoe UI Light'
+      ParentFont = False
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 33
+        Height = 21
+        Top = 5
+        Width = 47
+        Caption = 'Moeda'
+      end
+      object cboMoeda: THNSCombox
+        Left = 85
+        Height = 29
+        Top = 3
+        Width = 212
+        AutoComplete = True
+        AutoCompleteText = [cbactEnabled, cbactSearchAscending]
+        ItemHeight = 21
+        OnSelect = cboMoedaSelect
+        TabOrder = 0
+      end
+      object Label2: TLabel
+        Left = 304
+        Height = 21
+        Top = 5
+        Width = 78
+        Caption = 'Últ.Cotação'
+      end
+      object DBEdit1: TDBEdit
+        Left = 387
+        Height = 29
+        Top = 3
+        Width = 112
+        DataField = 'data'
+        DataSource = ds
+        ReadOnly = True
+        MaxLength = 0
+        ParentColor = True
+        TabOrder = 2
+        TabStop = False
+      end
+      object Label3: TLabel
+        Left = 326
+        Height = 21
+        Top = 40
+        Width = 56
+        Caption = 'Cotação'
+      end
+      object DBEdit2: TDBEdit
+        Left = 387
+        Height = 29
+        Top = 37
+        Width = 112
+        DataField = 'cotacao'
+        DataSource = ds
+        ReadOnly = True
+        MaxLength = 0
+        ParentColor = True
+        TabOrder = 1
+        TabStop = False
+      end
+      object Label4: TLabel
+        Left = 9
+        Height = 21
+        Top = 40
+        Width = 71
+        Caption = 'Nova Data'
+      end
+      object edData: TDateTimePicker
+        Left = 85
+        Height = 29
+        Top = 37
+        Width = 101
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        TabOrder = 3
+        TrailingSeparator = False
+        TextForNullDate = 'SEM DATA'
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 44282
+        Time = 0.464834652775608
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+        OnExit = edDataExit
+      end
+      object Label5: TLabel
+        Left = 23
+        Height = 21
+        Top = 73
+        Width = 57
+        Caption = 'Índice %'
+      end
+      object edIndice: TCalcEdit
+        Left = 85
+        Height = 29
+        Top = 71
+        Width = 136
+        CalculatorLayout = clNormal
+        AsInteger = 0
+        ButtonOnlyWhenFocused = True
+        ButtonWidth = 23
+        DialogTop = 0
+        DialogLeft = 0
+        NumGlyphs = 1
+        MaxLength = 0
+        TabOrder = 4
+        OnExit = edIndiceExit
+        Text = '0'
+      end
+      object cbSabado: TCheckBox
+        Left = 529
+        Height = 25
+        Hint = 'Considera sábados como dia útil'
+        Top = 36
+        Width = 77
+        Alignment = taLeftJustify
+        Caption = 'Sábados'
+        OnClick = cbSabadoClick
+        TabOrder = 5
+      end
+      object cbDomingo: TCheckBox
+        Left = 517
+        Height = 25
+        Hint = 'Considera Domingo como dia útil'
+        Top = 69
+        Width = 89
+        Alignment = taLeftJustify
+        Caption = 'Domingos'
+        OnClick = cbDomingoClick
+        TabOrder = 6
+      end
+      object edDias: TEdit
+        Left = 257
+        Height = 29
+        Top = 71
+        Width = 40
+        ParentColor = True
+        ReadOnly = True
+        TabStop = False
+        TabOrder = 7
+      end
+      object edVarDia: TEdit
+        Left = 387
+        Height = 29
+        Top = 71
+        Width = 112
+        Alignment = taRightJustify
+        ParentColor = True
+        ReadOnly = True
+        TabStop = False
+        TabOrder = 8
+      end
+      object Label6: TLabel
+        Left = 226
+        Height = 21
+        Top = 73
+        Width = 28
+        Caption = 'Dias'
+      end
+      object Label7: TLabel
+        Left = 317
+        Height = 21
+        Top = 73
+        Width = 65
+        Caption = 'Var. Diária'
+      end
+    end
+    object lb: TCheckListBox
+      Left = 5
+      Height = 322
+      Top = 120
+      Width = 627
+      Align = alBottom
+      BorderSpacing.Around = 5
+      Columns = 2
+      ItemHeight = 0
+      OnClickCheck = lbClickCheck
+      TabOrder = 1
+    end
+  end
+  object AL: TActionList
+    Images = DM.IL18
+    Left = 72
+    Top = 16
+    object gravar: TAction
+      Category = 'Manutencao'
+      Caption = 'Gravar'
+      Hint = 'Clique (ou F4) para gravar os dados'
+      ImageIndex = 17
+      OnExecute = gravarExecute
+    end
+    object Sair: TAction
+      Category = 'Manutencao'
+      Caption = '&Sair'
+      Hint = 'Clique para finalizar'
+      ImageIndex = 5
+      OnExecute = SairExecute
+    end
+    object imprimir: TAction
+      Caption = 'Imprimir'
+      ImageIndex = 28
+      OnExecute = imprimirExecute
+    end
+  end
+  object ds: TDataSource
+    Left = 32
+    Top = 16
+  end
+end

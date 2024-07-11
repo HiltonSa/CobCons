@@ -1,0 +1,251 @@
+object FrmBaixaPagamentoRNP: TFrmBaixaPagamentoRNP
+  Left = 501
+  Height = 353
+  Top = 197
+  Width = 572
+  BorderStyle = bsNone
+  BorderWidth = 2
+  Caption = 'FrmBaixaPagamentoRNP'
+  ClientHeight = 353
+  ClientWidth = 572
+  Font.Color = clWhite
+  Font.Height = -16
+  Font.Name = 'Segoe UI Light'
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  Position = poMainFormCenter
+  ShowHint = True
+  LCLVersion = '2.2.0.4'
+  object pnTitulo: TPanel
+    Left = 7
+    Height = 75
+    Top = 7
+    Width = 558
+    Align = alTop
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    Caption = 'Baixa de Pagamentos RNP'
+    Color = clGray
+    Font.Color = clWhite
+    Font.Height = -24
+    Font.Name = 'Segoe UI Light'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+    OnMouseMove = pnTituloMouseMove
+  end
+  object pnAcoes: TPanel
+    Left = 7
+    Height = 259
+    Top = 87
+    Width = 136
+    Align = alLeft
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 259
+    ClientWidth = 136
+    Color = clGray
+    ParentColor = False
+    TabOrder = 1
+    object SpeedButton1: TSpeedButton
+      Left = 2
+      Height = 39
+      Top = 2
+      Width = 132
+      Action = gravar
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Images = DM.IL18
+      ImageIndex = 13
+      Margin = 2
+    end
+    object SpeedButton2: TSpeedButton
+      Left = 2
+      Height = 39
+      Top = 43
+      Width = 132
+      Action = Cancelar
+      Align = alTop
+      BorderSpacing.Around = 2
+      Flat = True
+      Images = DM.IL18
+      ImageIndex = 12
+      Margin = 2
+    end
+  end
+  object pnBack: TPanel
+    Left = 148
+    Height = 259
+    Top = 87
+    Width = 417
+    Align = alClient
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 259
+    ClientWidth = 417
+    Color = clGray
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI Light'
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 2
+    object Label1: TLabel
+      Left = 21
+      Height = 21
+      Top = 11
+      Width = 98
+      Caption = 'Contabilização'
+    end
+    object edContab: TDateTimePicker
+      Left = 128
+      Height = 29
+      Top = 8
+      Width = 101
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      AutoSize = False
+      TabOrder = 0
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 44277
+      Time = 0.51914349537401
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+      OnChange = edContabChange
+    end
+    object cboAgente: THNSCombox
+      Left = 128
+      Height = 29
+      Top = 40
+      Width = 263
+      AutoComplete = True
+      AutoCompleteText = [cbactEnabled, cbactSearchAscending]
+      ItemHeight = 21
+      TabOrder = 1
+    end
+    object Label2: TLabel
+      Left = 70
+      Height = 21
+      Top = 43
+      Width = 49
+      Caption = 'Agente'
+    end
+    object Label3: TLabel
+      Left = 6
+      Height = 21
+      Top = 75
+      Width = 113
+      Caption = 'Tipo Documento'
+    end
+    object cboTipoDoc: THNSCombox
+      Left = 128
+      Height = 29
+      Top = 72
+      Width = 188
+      AutoComplete = True
+      AutoCompleteText = [cbactEnabled, cbactSearchAscending]
+      ItemHeight = 21
+      TabOrder = 2
+    end
+    object Label8: TLabel
+      Left = 61
+      Height = 21
+      Top = 109
+      Width = 58
+      Caption = 'Histórico'
+    end
+    object edHist: TEdit
+      Left = 128
+      Height = 29
+      Top = 105
+      Width = 263
+      CharCase = ecUppercase
+      MaxLength = 30
+      TabOrder = 3
+    end
+    object Label4: TLabel
+      Left = 40
+      Height = 21
+      Top = 171
+      Width = 79
+      Caption = 'Qtd. Pagtos'
+    end
+    object edQtd: TEdit
+      Left = 128
+      Height = 29
+      Top = 167
+      Width = 101
+      Alignment = taRightJustify
+      ParentColor = True
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 4
+    end
+    object edTotal: TEdit
+      Left = 128
+      Height = 29
+      Top = 199
+      Width = 101
+      Alignment = taRightJustify
+      ParentColor = True
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 5
+    end
+    object Label9: TLabel
+      Left = 89
+      Height = 21
+      Top = 203
+      Width = 30
+      Caption = 'Total'
+    end
+    object Label5: TLabel
+      Left = 45
+      Height = 21
+      Top = 140
+      Width = 74
+      Caption = 'Maior Data'
+    end
+    object edDtCtb: TEdit
+      Left = 128
+      Height = 29
+      Top = 136
+      Width = 101
+      ParentColor = True
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 6
+    end
+  end
+  object AL: TActionList
+    Images = DM.IL18
+    Left = 208
+    Top = 48
+    object gravar: TAction
+      Caption = 'Gravar'
+      Hint = 'Confirma a solicitação'
+      ImageIndex = 13
+      OnExecute = gravarExecute
+      ShortCut = 113
+    end
+    object Cancelar: TAction
+      Caption = 'Cancelar (Esc)'
+      Hint = 'Clique para Cancelar'
+      ImageIndex = 12
+      OnExecute = CancelarExecute
+      ShortCut = 27
+    end
+  end
+end

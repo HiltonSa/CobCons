@@ -1,0 +1,408 @@
+object FormRelInadimplentes: TFormRelInadimplentes
+  Left = 1611
+  Height = 364
+  Top = 200
+  Width = 802
+  Caption = 'FrmRelInadimplentes'
+  ClientHeight = 364
+  ClientWidth = 802
+  LCLVersion = '2.0.12.0'
+  object rl: TRLReport
+    Left = 0
+    Height = 1123
+    Top = 0
+    Width = 794
+    DataSource = ds
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Arial'
+    Margins.LeftMargin = 5
+    Margins.TopMargin = 5
+    Margins.RightMargin = 5
+    Margins.BottomMargin = 5
+    Title = 'INADIMPLENTES POR GRUPO'
+    object RLBand2: TRLBand
+      Left = 19
+      Height = 18
+      Top = 52
+      Width = 756
+      BandType = btHeader
+      Borders.Sides = sdCustom
+      Borders.DrawLeft = False
+      Borders.DrawTop = False
+      Borders.DrawRight = False
+      Borders.DrawBottom = True
+      Color = 13948116
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      object RLLabel2: TRLLabel
+        Left = 56
+        Height = 14
+        Top = 1
+        Width = 40
+        Caption = 'GRUPO'
+        Holder = RLDBText1
+        Transparent = False
+      end
+      object RLLabel3: TRLLabel
+        Left = 200
+        Height = 14
+        Top = 1
+        Width = 66
+        Alignment = taRightJustify
+        Caption = 'QTD COTAS'
+        Holder = RLDBText2
+        Transparent = False
+      end
+      object RLLabel4: TRLLabel
+        Left = 315
+        Height = 14
+        Top = 1
+        Width = 77
+        Alignment = taRightJustify
+        Caption = 'VLR JURIDICO'
+        Holder = RLDBText3
+        Transparent = False
+      end
+      object RLLabel5: TRLLabel
+        Left = 560
+        Height = 14
+        Top = 1
+        Width = 40
+        Alignment = taRightJustify
+        Caption = 'TOTAL'
+        Holder = RLDBText4
+        Transparent = False
+      end
+      object RLLabel6: TRLLabel
+        Left = 660
+        Height = 14
+        Top = 1
+        Width = 76
+        Alignment = taRightJustify
+        Caption = 'APREENDIDOS'
+        Holder = RLDBText5
+        Transparent = False
+      end
+      object RLLabel7: TRLLabel
+        Left = 410
+        Height = 14
+        Top = 1
+        Width = 86
+        Alignment = taRightJustify
+        Caption = 'VLR MEDIACAO'
+        Holder = RLDBText6
+        Transparent = False
+      end
+    end
+    object RLBand3: TRLBand
+      Left = 19
+      Height = 18
+      Top = 70
+      Width = 756
+      GreenBarPrint = True
+      object RLDBText1: TRLDBText
+        Left = 56
+        Height = 14
+        Top = 1
+        Width = 63
+        AutoSize = False
+        DataField = 'grupo'
+        DataSource = ds
+      end
+      object RLDBText2: TRLDBText
+        Left = 200
+        Height = 14
+        Top = 1
+        Width = 66
+        Alignment = taRightJustify
+        AutoSize = False
+        DataField = 'qtdina'
+        DataSource = ds
+      end
+      object RLDBText3: TRLDBText
+        Left = 296
+        Height = 14
+        Top = 1
+        Width = 96
+        Alignment = taRightJustify
+        AutoSize = False
+        DataField = 'vlrJuridico'
+        DataSource = ds
+      end
+      object RLDBText4: TRLDBText
+        Left = 504
+        Height = 14
+        Top = 1
+        Width = 96
+        Alignment = taRightJustify
+        AutoSize = False
+        DataField = 'vlrina'
+        DataSource = ds
+      end
+      object RLDBText5: TRLDBText
+        Left = 640
+        Height = 14
+        Top = 1
+        Width = 96
+        Alignment = taRightJustify
+        AutoSize = False
+        DataField = 'bemApreendido'
+        DataSource = ds
+      end
+      object RLDBText6: TRLDBText
+        Left = 400
+        Height = 14
+        Top = 1
+        Width = 96
+        Alignment = taRightJustify
+        AutoSize = False
+        DataField = 'vlrMediacao'
+        DataSource = ds
+      end
+    end
+    object RLBand4: TRLBand
+      Left = 19
+      Height = 18
+      Top = 88
+      Width = 756
+      BandType = btSummary
+      Borders.Sides = sdCustom
+      Borders.DrawLeft = False
+      Borders.DrawTop = False
+      Borders.DrawRight = False
+      Borders.DrawBottom = False
+      Color = clWhite
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      object RLDBResult1: TRLDBResult
+        Left = 531
+        Height = 16
+        Top = 1
+        Width = 69
+        Alignment = taRightJustify
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = True
+        Borders.DrawRight = False
+        Borders.DrawBottom = False
+        DataField = 'vlrina'
+        DataSource = ds
+        DisplayMask = ',#0.00'
+        Holder = RLDBText4
+        Info = riSum
+        Transparent = False
+      end
+      object RLDBResult2: TRLDBResult
+        Left = 2
+        Height = 16
+        Top = 1
+        Width = 121
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = True
+        Borders.DrawRight = False
+        Borders.DrawBottom = False
+        DataField = 'CONTRATO'
+        Info = riCount
+        Text = 'Total Grupos: '
+        Transparent = False
+      end
+      object RLDBResult3: TRLDBResult
+        Left = 607
+        Height = 16
+        Top = 1
+        Width = 129
+        Alignment = taRightJustify
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = True
+        Borders.DrawRight = False
+        Borders.DrawBottom = False
+        DataField = 'bemApreendido'
+        DataSource = ds
+        DisplayMask = ',#0.00'
+        Holder = RLDBText5
+        Info = riSum
+        Transparent = False
+      end
+      object RLDBResult4: TRLDBResult
+        Left = 187
+        Height = 16
+        Top = 1
+        Width = 79
+        Alignment = taRightJustify
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = True
+        Borders.DrawRight = False
+        Borders.DrawBottom = False
+        DataField = 'QTDINA'
+        DataSource = ds
+        DisplayMask = '00000'
+        Holder = RLDBText2
+        Info = riSum
+        Transparent = False
+      end
+      object RLDBResult5: TRLDBResult
+        Left = 295
+        Height = 16
+        Top = 1
+        Width = 97
+        Alignment = taRightJustify
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = True
+        Borders.DrawRight = False
+        Borders.DrawBottom = False
+        DataField = 'vlrJuridico'
+        DataSource = ds
+        DisplayMask = ',#0.00'
+        Holder = RLDBText3
+        Info = riSum
+        Transparent = False
+      end
+      object RLDBResult6: TRLDBResult
+        Left = 391
+        Height = 16
+        Top = 1
+        Width = 105
+        Alignment = taRightJustify
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = True
+        Borders.DrawRight = False
+        Borders.DrawBottom = False
+        DataField = 'vlrMediacao'
+        DataSource = ds
+        DisplayMask = ',#0.00'
+        Holder = RLDBText6
+        Info = riSum
+        Transparent = False
+      end
+    end
+    object RLBand5: TRLBand
+      Left = 19
+      Height = 33
+      Top = 19
+      Width = 756
+      BandType = btHeader
+      Borders.Sides = sdCustom
+      Borders.DrawLeft = False
+      Borders.DrawTop = False
+      Borders.DrawRight = False
+      Borders.DrawBottom = True
+      Color = 13948116
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      object RLLabel62: TRLLabel
+        Left = 280
+        Height = 16
+        Top = 16
+        Width = 196
+        Align = faCenterBottom
+        Alignment = taCenter
+        Caption = 'RELAÇÃO DE INADIMPLENTES'
+        Transparent = False
+      end
+      object RLDBText7: TRLDBText
+        Left = 0
+        Height = 16
+        Top = 0
+        Width = 50
+        Align = faLeftTop
+        DataField = 'nm_prs'
+        DataSource = dsPrs
+        Transparent = False
+      end
+      object RLSystemInfo3: TRLSystemInfo
+        Left = 715
+        Height = 16
+        Top = 0
+        Width = 41
+        Align = faRightTop
+        Alignment = taRightJustify
+        Transparent = False
+      end
+    end
+    object RLBand13: TRLBand
+      Left = 19
+      Height = 16
+      Top = 106
+      Width = 756
+      BandType = btSummary
+      Color = 13948116
+      ParentColor = False
+      Transparent = False
+      object RLSystemInfo5: TRLSystemInfo
+        Left = 0
+        Height = 14
+        Top = 0
+        Width = 756
+        Align = faWidth
+        Alignment = taRightJustify
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = [fsItalic]
+        Info = itNow
+        ParentFont = False
+        Text = 'Impresso em '
+        Transparent = False
+      end
+    end
+    object RLBand14: TRLBand
+      Left = 19
+      Height = 16
+      Top = 122
+      Width = 756
+      BandType = btFooter
+      Color = 13948116
+      ParentColor = False
+      Transparent = False
+      object RLSystemInfo4: TRLSystemInfo
+        Left = 100
+        Height = 14
+        Top = 0
+        Width = 99
+        Align = faLeftOnly
+        Info = itLastPageNumber
+        Text = '/ '
+        Transparent = False
+      end
+      object RLSystemInfo6: TRLSystemInfo
+        Left = 0
+        Height = 16
+        Top = 0
+        Width = 100
+        Align = faLeftMost
+        Info = itPageNumber
+        Text = 'PAG: '
+        Transparent = False
+      end
+    end
+  end
+  object ds: TDataSource
+    Left = 224
+    Top = 8
+  end
+  object dsPrs: TDataSource
+    Left = 264
+    Top = 8
+  end
+end

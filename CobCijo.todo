@@ -1,0 +1,13 @@
+{TODO : Checar criacao da nova parcela quando paga valor menor}
+{TODO : Implementar MALA DIRETA}
+{DONE :
+Implementar Estorno da Parcela:
+Ao estornar, volta o percentual devedor, ZERAR recibo}
+{TODO :
+Implementar QUITAÇÃO 
+Ocorre quando o cliente quita 100%.}
+{DONE : Exclusao do acordo - Nao deixar excluir quando houver parcela paga}
+{DONE : Implementar RECEBIMENTOS}
+{DONE : DEFINIR a maneira como as cotas serão contatadas}
+{DONE : Criar o acesso ao formulario de pendencias em clientes}
+ 

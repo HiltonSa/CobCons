@@ -1,0 +1,390 @@
+object frmPrs: TfrmPrs
+  Left = 1876
+  Height = 208
+  Top = 207
+  Width = 509
+  BorderStyle = bsToolWindow
+  Caption = 'Parâmetros'
+  ClientHeight = 208
+  ClientWidth = 509
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  KeyPreview = True
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  Position = poScreenCenter
+  ShowHint = True
+  LCLVersion = '2.0.10.0'
+  object stBar: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 185
+    Width = 509
+    Panels = <    
+      item
+        Style = psOwnerDraw
+        Width = 18
+      end    
+      item
+        Width = 50
+      end>
+    OnDrawPanel = stBarDrawPanel
+  end
+  object Panel1: TPanel
+    Left = 422
+    Height = 185
+    Top = 0
+    Width = 87
+    Align = alRight
+    BevelInner = bvLowered
+    ClientHeight = 185
+    ClientWidth = 87
+    Color = clSilver
+    ParentColor = False
+    TabOrder = 1
+    object btnGravar: TSpeedButton
+      Left = 4
+      Height = 20
+      Top = 63
+      Width = 80
+      Action = Grava
+      Enabled = False
+      Flat = True
+    end
+    object btnCancelar: TSpeedButton
+      Left = 4
+      Height = 20
+      Top = 105
+      Width = 80
+      Action = Cancela
+      Enabled = False
+      Flat = True
+    end
+    object btnSair: TSpeedButton
+      Left = 4
+      Height = 20
+      Top = 147
+      Width = 80
+      Action = Sair
+      Flat = True
+    end
+    object btnAlterar: TSpeedButton
+      Left = 4
+      Height = 20
+      Top = 21
+      Width = 80
+      Action = Altera
+      Enabled = False
+      Flat = True
+    end
+  end
+  object pc: TPageControl
+    Left = 0
+    Height = 185
+    Top = 0
+    Width = 422
+    ActivePage = tsGeral
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 2
+    object tsGeral: TTabSheet
+      Caption = 'Geral'
+      ClientHeight = 159
+      ClientWidth = 414
+      object Panel2: TPanel
+        Left = 0
+        Height = 159
+        Top = 0
+        Width = 414
+        Align = alClient
+        BevelInner = bvLowered
+        ClientHeight = 159
+        ClientWidth = 414
+        Color = clMoneyGreen
+        ParentColor = False
+        TabOrder = 0
+        object Label1: TLabel
+          Left = 37
+          Height = 13
+          Top = 16
+          Width = 19
+          Caption = 'Cód'
+          FocusControl = DBEdit1
+          ParentColor = False
+        end
+        object Label2: TLabel
+          Left = 77
+          Height = 13
+          Top = 16
+          Width = 28
+          Caption = 'Nome'
+          FocusControl = DBEdit2
+          ParentColor = False
+        end
+        object Label3: TLabel
+          Left = 77
+          Height = 13
+          Top = 56
+          Width = 22
+          Caption = 'CGC'
+          FocusControl = DBEdit3
+          ParentColor = False
+        end
+        object Label4: TLabel
+          Left = 76
+          Height = 13
+          Top = 96
+          Width = 42
+          Caption = '% Multas'
+          FocusControl = DBEdit4
+          ParentColor = False
+        end
+        object Label5: TLabel
+          Left = 156
+          Height = 13
+          Top = 96
+          Width = 36
+          Caption = '% Juros'
+          FocusControl = DBEdit5
+          ParentColor = False
+        end
+        object Label6: TLabel
+          Left = 244
+          Height = 13
+          Top = 96
+          Width = 62
+          Caption = '% Honorários'
+          FocusControl = DBEdit6
+          ParentColor = False
+        end
+        object lblLib: TLabel
+          Left = 77
+          Height = 13
+          Top = 139
+          Width = 57
+          Caption = 'Liberação'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit1: TDBEdit
+          Left = 37
+          Height = 21
+          Top = 32
+          Width = 33
+          DataField = 'CD_PRS'
+          DataSource = DS
+          ReadOnly = True
+          CharCase = ecNormal
+          Color = clBtnFace
+          MaxLength = 0
+          TabOrder = 0
+          TabStop = False
+        end
+        object DBEdit2: TDBEdit
+          Left = 77
+          Height = 21
+          Top = 32
+          Width = 300
+          DataField = 'NM_PRS'
+          DataSource = DS
+          CharCase = ecUppercase
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object DBEdit3: TDBEdit
+          Left = 77
+          Height = 21
+          Top = 72
+          Width = 144
+          DataField = 'CD_CGC'
+          DataSource = DS
+          CharCase = ecUppercase
+          MaxLength = 18
+          TabOrder = 2
+        end
+        object DBEdit4: TDBEdit
+          Left = 76
+          Height = 21
+          Top = 112
+          Width = 50
+          DataField = 'PC_MUL'
+          DataSource = DS
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 3
+        end
+        object DBEdit5: TDBEdit
+          Left = 156
+          Height = 21
+          Top = 112
+          Width = 50
+          DataField = 'PC_JUR'
+          DataSource = DS
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 4
+        end
+        object DBEdit6: TDBEdit
+          Left = 252
+          Height = 21
+          Top = 112
+          Width = 50
+          DataField = 'PC_HONOR'
+          DataSource = DS
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 5
+        end
+      end
+    end
+    object tsSAG: TTabSheet
+      Caption = 'SAG'
+      ClientHeight = 159
+      ClientWidth = 414
+      ImageIndex = 1
+      object Panel3: TPanel
+        Left = 0
+        Height = 159
+        Top = 0
+        Width = 414
+        Align = alClient
+        BevelInner = bvLowered
+        ClientHeight = 159
+        ClientWidth = 414
+        Color = clMoneyGreen
+        ParentColor = False
+        TabOrder = 0
+        object Label8: TLabel
+          Left = 19
+          Height = 13
+          Top = 34
+          Width = 37
+          Caption = 'Contato'
+          FocusControl = DBEdit8
+          ParentColor = False
+        end
+        object Label9: TLabel
+          Left = 19
+          Height = 13
+          Top = 77
+          Width = 42
+          Caption = 'Telefone'
+          FocusControl = DBEdit9
+          ParentColor = False
+        end
+        object Label11: TLabel
+          Left = 108
+          Height = 13
+          Top = 77
+          Width = 25
+          Caption = 'Email'
+          FocusControl = DBEdit11
+          ParentColor = False
+        end
+        object Label7: TLabel
+          Left = 331
+          Height = 13
+          Top = 34
+          Width = 35
+          Caption = 'Ult.Sag'
+          FocusControl = DBEdit7
+          ParentColor = False
+        end
+        object DBEdit8: TDBEdit
+          Left = 19
+          Height = 21
+          Top = 50
+          Width = 300
+          DataField = 'NMCONTATO'
+          DataSource = DS
+          CharCase = ecUppercase
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object DBEdit9: TDBEdit
+          Left = 19
+          Height = 21
+          Top = 93
+          Width = 83
+          DataField = 'TELCONTATO'
+          DataSource = DS
+          CharCase = ecUppercase
+          MaxLength = 18
+          TabOrder = 1
+        end
+        object DBEdit11: TDBEdit
+          Left = 108
+          Height = 21
+          Top = 93
+          Width = 287
+          DataField = 'MAILCONTATO'
+          DataSource = DS
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object DBEdit7: TDBEdit
+          Left = 331
+          Height = 21
+          Top = 50
+          Width = 64
+          DataField = 'ULTSAG'
+          DataSource = DS
+          ReadOnly = True
+          CharCase = ecNormal
+          Color = clBtnFace
+          MaxLength = 0
+          TabOrder = 3
+          TabStop = False
+        end
+      end
+    end
+  end
+  object DS: TDataSource
+    AutoEdit = False
+    DataSet = DM.cdsPRS
+    OnStateChange = DSStateChange
+    Left = 184
+    Top = 33
+  end
+  object AL: TActionList
+    Left = 152
+    Top = 32
+    object Altera: TAction
+      Category = 'Manutencao'
+      Caption = '&Alterar (F3)'
+      Hint = 'Clique (ou F3) para alterar os dados'
+      ImageIndex = 1
+      OnExecute = AlteraExecute
+    end
+    object Grava: TAction
+      Category = 'Manutencao'
+      Caption = '&Grava (F5)'
+      Hint = 'Clique (ou F5) para gravar os dados'
+      ImageIndex = 3
+      OnExecute = GravaExecute
+    end
+    object Cancela: TAction
+      Category = 'Manutencao'
+      Caption = '&Canc (F6)'
+      Hint = 'Clique (ou F6) para cancelar as alterações'
+      ImageIndex = 5
+      OnExecute = CancelaExecute
+    end
+    object Sair: TAction
+      Category = 'Manutencao'
+      Caption = '&Sair'
+      Hint = 'Clique para finalizar'
+      ImageIndex = 0
+      OnExecute = SairExecute
+    end
+  end
+end
