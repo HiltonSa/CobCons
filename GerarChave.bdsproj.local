@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject>
-	<Transactions>
-    <Transaction>2014/05/20 15:11:10.763.pas,C:\Users\Hilton\Documents\Borland Studio Projects\Unit1.pas=D:\Hilton\Documents\Borland Studio Projects\CobCons\FormGeraChave.pas</Transaction>
-    <Transaction>2014/05/20 15:11:10.763.dfm,C:\Users\Hilton\Documents\Borland Studio Projects\Unit1.dfm=D:\Hilton\Documents\Borland Studio Projects\CobCons\FormGeraChave.dfm</Transaction>
-    <Transaction>2014/05/20 15:11:23.887.bdsproj,C:\Users\Hilton\Documents\Borland Studio Projects\Project1.bdsproj=D:\Hilton\Documents\Borland Studio Projects\CobCons\GerarChave.bdsproj</Transaction>
-  </Transactions>
-</BorlandProject>
